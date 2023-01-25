@@ -1,0 +1,146 @@
+<section class="faqs-section" >
+  <div class="page-width" >
+    <div class="faqs-header" >
+      <img src="{{ section.settings.icon_image | img_url: '800x' }}">
+      <h1 class="faqs-title" > {{ section.settings.title_section }} </h1>
+      <p class="faqs-description">{{ section.settings.description_section }}</p>
+    </div>
+    <div class="faqs-list" >
+      {%- for block in section.blocks -%}
+        <div class="faqs-item__content" >
+          <button class="faqs-list__item collapsible" >
+            {%- if block.settings.title != blank -%}
+              <h3 class="faqs-item__title" >{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+          </button>
+          <div class="content">
+            <div>{{ block.settings.text }}</div>
+          </div>
+        </div>
+        
+      {%- endfor -%}    
+    </div>
+  </div>
+</section>
+
+<style>
+
+  
+.collapsible {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  background: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible:after {
+  content: '';
+  font-weight: bold;
+  float: right;
+  margin-left: 0;
+}
+
+
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+{% schema %}
+
+
+
+  {
+  "name": "Preguntas Frecuentes",
+  "tag": "section",
+  "settings": [
+      {
+      "type": "image_picker",
+      "id": "icon_image",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "title_section", 
+      "label": "Title"
+    },
+
+    {
+      "type": "text",
+      "id": "description_section", 
+      "label": "Description section"
+    }
+  ],
+ "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.multicolumn.blocks.column.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Column",
+          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Preguntas Frecuentes",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+ 
+
+ 
+
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

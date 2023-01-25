@@ -1,0 +1,135 @@
+<section class="main-banner" style="background: url('{{ section.settings.background_video }}')" >
+  {% comment %}<img src="{{ section.settings.background_image | img_url: '800x' }}">{% endcomment %}
+  <video preload="auto" autoplay="autoplay" muted="true" id="banner-video" autoplay controls="false"> <source src="{{ section.settings.background_video }}" type="video/mp4"> </video>
+  <div class="main-banner__mask" >
+    {%- if section.settings.title-button and section.settings.url_button != blank -%}
+      <a class="main-banner__btn" href="{{ section.settings.url_button}}">{{ section.settings.title-button}}</a>
+    {%- endif  -%}
+    
+  </div>
+</section>
+
+<style>
+  .main-banner {
+    height: calc(100vh - 175px);
+    position: relative;
+  }
+
+  .main-banner img, .main-banner video  {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-banner__mask {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 20px;
+    padding-bottom: 64px;
+  }
+
+  .main-banner__btn {
+    background-color: #D35E3F;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    font-family: 'Karla', sans-serif;
+    text-decoration: none;
+    padding: 16px 124.82px;
+    border-radius: 8px;
+    line-height: 24px;
+    font-size: 18px;
+    outline: none;
+    box-shadow: none;
+    width: fit-content;
+  }
+
+  @media (min-width: 0px) and (max-width: 600px){
+    .main-banner__btn {
+      width: 80.515%;
+      text-align: center;
+      padding: 12px 20px!important;
+      position: absolute;
+      bottom: -24px;
+      z-index: 1;
+      font-size: 18px;
+    }   
+    .main-banner {
+      height: 68vh;
+    }
+  }
+</style>
+
+<script>
+
+	var video = document.getElementById("banner-video");
+  document.getElementById("banner-video").controls = false;
+
+
+function toggleControls() {
+  if (video.hasAttribute("controls")) {
+     video.removeAttribute("controls")   
+  } else {
+     video.setAttribute("controls","controls")   
+  }
+}
+
+
+</script>
+
+{% schema %}
+  {
+  "name": "Banner Home",
+  "settings": [
+     {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Image banner",
+      "info": "1200 x 800px .jpg recommended"
+    },
+    
+    {
+      "type": "text",
+      "id": "background_video", 
+      "label": "Video"
+    },
+
+    {
+      "type": "text",
+      "id": "title-button", 
+      "label": "Text button",
+      "default": "Conoce Más"
+    },    
+
+
+    {
+      "type": "url",
+      "id": "url_button", 
+      "label": "Url button"
+    }
+   
+  ],
+  "presets": [
+    {
+      "category": "Advanced",
+      "name": "Banner Home"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+ 
+
+ 
+
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

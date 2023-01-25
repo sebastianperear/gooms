@@ -1,0 +1,211 @@
+<div class="main-reviews" >
+  <div class="page-width" >
+    <h2 class="main-reviews__title" >Gooms Reviews</h2>
+  
+    <div class="main-reviews__grid" >
+      <div class="main-reviews__item" >
+        <div class="main-reviews__header">
+          <div class="main-reviews__avatar">
+          </div>
+          <div>
+            <h2 class="main-reviews__name">Sebastian Canal</h2>
+            <p class="main-reviews__position">Nutricionista</p>
+            <div class="main-reviews__stars">
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}              
+              {% render 'icon-star' %}              
+            </div>
+          </div>
+        </div>
+        <div class="main-reviews__text"> 
+          <p>Nutricionista recomienda gooms porque son super deliciosas y super saludables, me gusta la de kiwi miel y limon, que pone super hermoso tu pelo</p>
+        </div>
+      </div>
+      <div class="main-reviews__item" >
+        <div class="main-reviews__header">
+          <div class="main-reviews__avatar">
+            
+          </div>
+          <div>
+            <h2 class="main-reviews__name">Alejandro Gomez</h2>
+            <p class="main-reviews__position">Deportista</p>
+            <div class="main-reviews__stars">
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}              
+              {% render 'icon-star' %}              
+            </div>
+          </div>
+        </div>
+        <div class="main-reviews__text"> 
+          <p>Gooms es excelente ya que disminuye el cansancio mental, físico y mejora el rendimiento de cada persona.</p>
+        </div>
+        
+      </div>  
+      
+      <div class="main-reviews__item" >
+        <div class="main-reviews__header">
+          <div class="main-reviews__avatar">
+          </div>
+          <div>
+            <h2 class="main-reviews__name">Natalia Perales</h2>
+            <div class="main-reviews__stars">
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
+            </div>
+          </div>
+        </div>
+        <div class="main-reviews__text"> 
+          <p>Uso Gooms como estimulante del sueño me ayuda a no tener tantas intermitencias durante la noche y dormir profundamente.</p>
+        </div>
+        
+      </div>    
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .main-reviews {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  .main-reviews__title {
+    color: #201616;
+    font-size: 32px;
+    font-family: Karla,sans-serif;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .main-reviews__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .main-reviews__item {
+    background: #FFF6F3;
+    padding: 24px 24px 32px 24px;
+    border-radius: 32px;
+  }
+
+  .main-reviews__grid {
+    margin-bottom: 24px;
+  }
+
+  .main-reviews__header {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  .main-reviews__avatar {
+    background: #FF5C38;
+    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .main-reviews__avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .main-reviews__name {
+    color: #201616;
+    font-size: 20px;
+    margin-top: 0;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .main-reviews__position {
+    font-size: 12px;
+    line-height: 12px;
+    color: #201616;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .main-reviews__stars {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .main-reviews__stars svg{
+    width: 15.99px;
+    height: 15.51px;
+    margin-right: 4px;
+  }
+
+  .main-reviews__text p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: #201616;
+  }
+
+  @media (min-width: 0px) and (max-width: 600px) {
+    .main-reviews {
+      padding-top: 32px;
+      padding-bottom: 44px;
+    }
+    .main-reviews__title {
+      font-size: 20px;
+      line-height: 32px;
+      margin-bottom: 24px;
+    }
+
+    .main-reviews__name {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .main-reviews__item {
+      padding: 24px;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 768px) {
+    .main-reviews__header {
+      flex-direction: column;
+    }
+  }
+
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Reviews",
+    "settings": [],
+    
+    "presets": [
+    {
+      "category": "Advanced",
+      "name": "Reviews"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

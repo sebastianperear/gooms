@@ -1,0 +1,85 @@
+<div class="main-about" >
+    <div class="page-width-about">
+      <h2 class="main-title{% if section.settings.title == blank %} title--no-heading{% endif %}">{{ section.settings.title | escape }}</h2>
+      <ul class="main-about__grid grid--{{ section.settings.products_to_show }}">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image != blank -%}
+           <li class="main-about__item">
+              <div class="main-about__icon" >
+                <img src="{{ block.settings.image | img_url: '' }}">
+              </div>
+              <div class="main-about__title" >{{ block.settings.text }}</div>
+          </li>
+        {%- endif -%}
+        
+        {%- endfor -%}
+      </ul>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sobre nosotros",
+  "class": "spaced-section spaced-section--full-width",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Cantidad de items a mostrar por fila"
+    }
+      
+  ],
+  
+  "blocks": [
+    {
+      "type": "column",
+      "name": "images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image.</p>",
+          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sobre nosotros",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

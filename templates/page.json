@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "0ba222e6-b927-4dda-b689-2265b62f2e84": {
+      "type": "faqs",
+      "blocks": {
+        "099c7a2e-3374-4bb8-8e26-515d195773ae": {
+          "type": "column",
+          "settings": {
+            "title": "¿Que es Gooms?",
+            "text": "<p>Lorem ipsum dolor sit amet. Qui facilis quidem nam dolore nihil ex deleniti cupiditate aut dolor delectus. Eos quasi galisum qui vero repellendus qui cupiditate temporibus ut voluptas provident sed internos consequatur rem animi impedit.<\/p>"
+          }
+        },
+        "58cc60f6-79a4-4821-8dc3-748d3d5c03e8": {
+          "type": "column",
+          "settings": {
+            "title": "¿Que contiene cada goma?",
+            "text": "<p>Lorem ipsum dolor sit amet. Qui facilis quidem nam dolore nihil ex deleniti cupiditate aut dolor delectus. Eos quasi galisum qui vero repellendus qui cupiditate temporibus ut voluptas provident sed internos consequatur rem animi impedit.<\/p>"
+          }
+        },
+        "3561266e-aeaf-4efa-a15b-056b4a01f782": {
+          "type": "column",
+          "settings": {
+            "title": "¿Cuál es la goma más vendida?",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "19543677-234b-41d7-9377-2049027bc666": {
+          "type": "column",
+          "settings": {
+            "title": "¿Que contiene cada goma?",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "7738bd9a-97ee-4d72-b05b-f5719ac16f5e": {
+          "type": "column",
+          "settings": {
+            "title": "¿Cuál es la goma más vendida?",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "099c7a2e-3374-4bb8-8e26-515d195773ae",
+        "58cc60f6-79a4-4821-8dc3-748d3d5c03e8",
+        "3561266e-aeaf-4efa-a15b-056b4a01f782",
+        "19543677-234b-41d7-9377-2049027bc666",
+        "7738bd9a-97ee-4d72-b05b-f5719ac16f5e"
+      ],
+      "settings": {
+        "icon_image": "shopify:\/\/shop_images\/g434.png",
+        "title_section": "¿Tienes alguna duda 🤔?",
+        "description_section": "Bienvenido a nuestra sección de preguntas frecuentes"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0ba222e6-b927-4dda-b689-2265b62f2e84"
+  ]
+}

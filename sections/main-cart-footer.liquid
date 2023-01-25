@@ -1,0 +1,259 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+
+
+
+
+
+<div class="{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
+  <div>
+    <div class="cart__footer">
+      {%- if settings.show_cart_note -%}
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea class="text-area field__input" name="note" form="cart" id="Cart-note" placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
+        </cart-note>
+      {%- endif -%}
+
+      <div class="cart__blocks">
+        <h2 class="cart__footer-title" > Resumen</h2>
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              <div class="js-contents" {{ block.shopify_attributes }}>
+                <div class="totals">
+                  {%- if cart.item_count > 1 -%}
+                    <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }} ({{ cart.item_count }} items)</h2>
+                   {%- else -%}
+                      <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }} ({{ cart.item_count }} item)</h2>
+                    {%- endif -%}
+                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                </div>
+
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {%- render 'icon-discount' -%}
+                          {{ discount.title }}
+                          (-{{ discount.total_allocated_amount | money }})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+
+                <small class="tax-note caption-large rte">
+                  {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                    {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- elsif cart.taxes_included -%}
+                    {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                  {%- elsif shop.shipping_policy.body != blank -%}
+                    {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                  {%- else -%}
+                    {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- else -%}
+              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <noscript>
+                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                    {{ 'sections.cart.update' | t }}
+                  </button>
+                </noscript>
+
+                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                  {{ 'sections.cart.checkout' | t }}
+                </button>
+              </div>
+
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {% endfor %}
+
+        <div id="cart-errors"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .cart__footer .cart__blocks{
+    background: #FFF6F3;
+    padding: 32px;
+    border-radius: 8px;
+  }
+
+  .cart__footer-title {
+    color:#201616;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .totals {
+    justify-content: space-between;
+  }
+
+  .content-for-layout {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  #shopify-section-template--14860367691859__cart-items {
+    width: 70%;
+  }
+
+  #shopify-section-template--14860367691859__cart-footer {
+    width: 30%;
+  }
+
+  #shopify-section-template--14860367691859__featured-collection {
+    width: 100%;
+  }
+
+  .cart__footer {
+    padding-top: 128px;
+    padding-right: 5rem;
+  }
+
+  .title-wrapper-with-link {
+    padding-top: 0;
+  }
+
+  .cart__blocks {
+    width: 100%;
+  }
+
+  .cart-item__quantity-wrapper {
+    justify-content: flex-end;
+  }
+  
+
+  @media screen and (max-width: 900px) {
+    #shopify-section-template--14860367691859__cart-items {
+      width: 100%;
+    }
+
+    .cart__footer {
+      padding-right: 0;
+      padding-top: 40px;
+    }
+
+    #shopify-section-template--14860367691859__cart-footer {
+      width: 100%;
+    }
+
+
+  }
+
+  @media screen and (min-width: 750px) {
+    .cart-item__media {
+      width: 21rem;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 768px) {
+    .price, .totals h2, .totals p{
+      font-size: 20px!important;
+      line-height: 30px;
+    }
+  
+    .product-option, .tax-note {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+    @media (min-width: 901px) and (max-width: 1291px) {
+      .totals {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 17px;
+      }
+
+      .totals__subtotal-value {
+        margin-left: 0;
+      }
+
+      .cart__footer {
+        padding-right: 5rem;
+      }
+      
+      #shopify-section-template--14860367691859__cart-footer {
+    	width: 37%;
+      }	
+      
+      #shopify-section-template--14860367691859__cart-items {
+    	width: 63%;
+      }
+      
+      .cart-item__media {
+    	width: 15rem;
+      }
+      
+      .cart-item>td+td {
+        padding-left: 2rem;
+      }
+    }
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+
+      return (msie > 0 || trident > 0);
+    }
+
+    if (!isIE()) return;
+    const cartSubmitInput = document.createElement('input');
+    cartSubmitInput.setAttribute('name', 'checkout');
+    cartSubmitInput.setAttribute('type', 'hidden');
+    document.querySelector('#cart').appendChild(cartSubmitInput);
+    document.querySelector('#checkout').addEventListener('click', function(event) {
+      document.querySelector('#cart').submit();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}
