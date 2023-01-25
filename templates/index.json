@@ -101,7 +101,7 @@
         "collection": "all",
         "products_to_show": 6,
         "columns_desktop": 6,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
