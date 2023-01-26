@@ -11,9 +11,9 @@
     "gradient_background_1": "",
     "colors_background_2": "#f3f3f3",
     "gradient_background_2": "",
-    "type_header_font": "assistant_n4",
+    "type_header_font": "karla_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "karla_n4",
     "body_scale": 100,
     "page_width": 1400,
     "spacing_sections": 0,
@@ -198,15 +198,7 @@
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "16249237982554731639": {
-        "type": "shopify:\/\/apps\/subscriptions-recurring-order\/blocks\/wsSubscriptionConfig\/8af379fe-c7cd-403a-aef3-06ca83872037",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Default": {
