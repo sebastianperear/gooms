@@ -1,12 +1,11 @@
-<div class="main-reviews" >
-  <div class="page-width" >
-    <h2 class="main-reviews__title" >Gooms Reviews</h2>
-  
-    <div class="main-reviews__grid" >
-      <div class="main-reviews__item" >
+<div class="main-reviews">
+  <div class="page-width">
+    <h2 class="main-reviews__title">Gooms Reviews</h2>
+
+    <div class="main-reviews__grid">
+      <div class="main-reviews__item">
         <div class="main-reviews__header">
-          <div class="main-reviews__avatar">
-          </div>
+          <div class="main-reviews__avatar"></div>
           <div>
             <h2 class="main-reviews__name">Sebastian Canal</h2>
             <p class="main-reviews__position">Nutricionista</p>
@@ -14,20 +13,21 @@
               {% render 'icon-star' %}
               {% render 'icon-star' %}
               {% render 'icon-star' %}
-              {% render 'icon-star' %}              
-              {% render 'icon-star' %}              
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
             </div>
           </div>
         </div>
-        <div class="main-reviews__text"> 
-          <p>Nutricionista recomienda gooms porque son super deliciosas y super saludables, me gusta la de kiwi miel y limon, que pone super hermoso tu pelo</p>
+        <div class="main-reviews__text">
+          <p>
+            Nutricionista recomienda gooms porque son super deliciosas y super saludables, me gusta la de kiwi miel y
+            limon, que pone super hermoso tu pelo
+          </p>
         </div>
       </div>
-      <div class="main-reviews__item" >
+      <div class="main-reviews__item">
         <div class="main-reviews__header">
-          <div class="main-reviews__avatar">
-            
-          </div>
+          <div class="main-reviews__avatar"></div>
           <div>
             <h2 class="main-reviews__name">Alejandro Gomez</h2>
             <p class="main-reviews__position">Deportista</p>
@@ -35,21 +35,21 @@
               {% render 'icon-star' %}
               {% render 'icon-star' %}
               {% render 'icon-star' %}
-              {% render 'icon-star' %}              
-              {% render 'icon-star' %}              
+              {% render 'icon-star' %}
+              {% render 'icon-star' %}
             </div>
           </div>
         </div>
-        <div class="main-reviews__text"> 
-          <p>Gooms es excelente ya que disminuye el cansancio mental, físico y mejora el rendimiento de cada persona.</p>
+        <div class="main-reviews__text">
+          <p>
+            Gooms es excelente ya que disminuye el cansancio mental, físico y mejora el rendimiento de cada persona.
+          </p>
         </div>
-        
-      </div>  
-      
-      <div class="main-reviews__item" >
+      </div>
+
+      <div class="main-reviews__item">
         <div class="main-reviews__header">
-          <div class="main-reviews__avatar">
-          </div>
+          <div class="main-reviews__avatar"></div>
           <div>
             <h2 class="main-reviews__name">Natalia Perales</h2>
             <div class="main-reviews__stars">
@@ -62,26 +62,27 @@
             </div>
           </div>
         </div>
-        <div class="main-reviews__text"> 
-          <p>Uso Gooms como estimulante del sueño me ayuda a no tener tantas intermitencias durante la noche y dormir profundamente.</p>
+        <div class="main-reviews__text">
+          <p>
+            Uso Gooms como estimulante del sueño me ayuda a no tener tantas intermitencias durante la noche y dormir
+            profundamente.
+          </p>
         </div>
-        
-      </div>    
+      </div>
     </div>
   </div>
 </div>
-
 
 <style>
   .main-reviews {
     padding-top: 64px;
     padding-bottom: 64px;
   }
-  
+
   .main-reviews__title {
     color: #201616;
     font-size: 32px;
-    font-family: Karla,sans-serif;
+    font-family: Karla, sans-serif;
     text-align: center;
     font-weight: 700;
     margin-bottom: 40px;
@@ -94,9 +95,10 @@
   }
 
   .main-reviews__item {
-    background: #FFF6F3;
+    background: #fff6f3;
     padding: 24px 24px 32px 24px;
     border-radius: 32px;
+    box-shadow: 0px 4px 24px rgb(0 0 0 / 5%);
   }
 
   .main-reviews__grid {
@@ -112,13 +114,13 @@
   }
 
   .main-reviews__avatar {
-    background: #FF5C38;
+    background: #ff5c38;
     border-radius: 16px;
     width: 64px;
     height: 64px;
   }
 
-  .main-reviews__avatar img{
+  .main-reviews__avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -146,7 +148,7 @@
     margin-top: 10px;
   }
 
-  .main-reviews__stars svg{
+  .main-reviews__stars svg {
     width: 15.99px;
     height: 15.51px;
     margin-right: 4px;
@@ -186,22 +188,20 @@
       flex-direction: column;
     }
   }
-
-  
 </style>
 
 {% schema %}
-  {
-    "name": "Reviews",
-    "settings": [],
-    
-    "presets": [
+{
+  "name": "Reviews",
+  "settings": [],
+
+  "presets": [
     {
       "category": "Advanced",
       "name": "Reviews"
     }
   ]
-  }
+}
 {% endschema %}
 
 {% stylesheet %}
