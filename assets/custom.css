@@ -38,7 +38,7 @@
 .announcement-bar  {
   background: #FF5C38;
   border-bottom: none;
-  padding: 10px 30px;
+  padding: 10px 50px;
   align-items: center;
   justify-content: center;
   display: grid;
@@ -62,17 +62,17 @@
 }
 
 .header-social svg{
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 
 .announcement-bar__message {
   font-family: 'Karla', sans-serif;
   font-weight: bold;
-  color: #fed0c4ff;
-  font-size: 18px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
   padding: 0;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .cart-count-bubble {
