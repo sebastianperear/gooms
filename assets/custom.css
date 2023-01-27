@@ -325,7 +325,7 @@
   line-height: 20px;
   color: #FED0C4;
   font-family: Karla,sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   margin-bottom: 10px;
 }
 
@@ -334,6 +334,7 @@
   line-height: 20px;
   text-decoration: none!important;
   font-family: Karla,sans-serif;
+  font-weight: 400;
 }
 
 .footer__content-bottom {
