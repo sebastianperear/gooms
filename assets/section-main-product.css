@@ -1216,3 +1216,32 @@ a.product__text {
 
 
 /* New */
+
+
+/* Reviews */
+
+a.yotpo-reviews-trademark.yotpo-reviews-by {
+  display: none !important;
+}
+
+.yotpo-display-l .yotpo-main-layout .yotpo-head .yotpo-headline, .yotpo-display-m .yotpo-main-layout .yotpo-head .yotpo-headline {
+  font-weight: var(--primary-font-weight);
+  font-family: var(--primary-font-family);
+  font-style: var(--primary-font-style);
+  flex-basis: 100% !important;
+  margin-left: 0 !important;
+  text-align: left;
+}
+
+.yotpo-main-layout .yotpo-layout-header-wrapper[data-v-49868870] {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.yotpo-bottom-line .yotpo-bottom-line-left-panel.yotpo-bottom-line-score {
+  color: rgb(0 0 0) !important;
+  font-weight: 700;
+}
+/* Reviews */
+
