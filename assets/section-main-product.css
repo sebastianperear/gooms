@@ -1243,5 +1243,25 @@ a.yotpo-reviews-trademark.yotpo-reviews-by {
   color: rgb(0 0 0) !important;
   font-weight: 700;
 }
+
+.yotpo-display-s .yotpo-main-layout .yotpo-layout-header-wrapper[data-v-49868870] {
+  flex-direction: row;
+  margin-bottom: 34px;
+}
+
+.yotpo-display-s .yotpo-head {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: initial;
+  justify-content: flex-start;
+}
+
+.yotpo-head .yotpo-headline {
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 800;
+}
+
+
 /* Reviews */
 
