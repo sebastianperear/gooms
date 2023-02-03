@@ -17,18 +17,14 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-
-  
 {%- endstyle -%}
 
 {%- if cart == empty -%}
-<style>
-  #shopify-section-template--14860367691859__cart-items {
-    width: 100%!important;
-  }
-</style>
-  
+  <style>
+    #shopify-section-template--14860367691859__cart-items {
+      width: 100% !important;
+    }
+  </style>
 {%- endif -%}
 
 {%- unless settings.cart_type == 'drawer' -%}
@@ -42,12 +38,10 @@
   </div>
 
   <div class="cart__warnings">
-    <div class="cart__warnings-absolute" >
+    <div class="cart__warnings-absolute">
       {% render 'icon-sad' %}
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="button-empty">
-        Ver productos
-      </a>
+      <a href="{{ routes.all_products_collection_url }}" class="button-empty"> Ver productos </a>
 
       {% comment %}
         {%- if shop.customer_accounts_enabled and customer == nil -%}
@@ -65,13 +59,39 @@
       <div class="js-contents">
         {%- if cart != empty -%}
           <table class="cart-items">
-            <caption class="visually-hidden">{{ 'sections.cart.title' | t }}</caption>
+            <caption class="visually-hidden">
+              {{ 'sections.cart.title' | t }}
+            </caption>
             <thead>
               <tr>
-                <th class="caption-with-letter-spacing medium-hide large-up-hide small-hide right" colspan="2" scope="col">{{ 'sections.cart.headings.product' | t }}</th>
-                <th class="medium-hide medium-hide large-up-hide small-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
-                <th class="cart-items__heading--wide medium-hide large-up-hide small-hide small-hide caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.quantity' | t }}</th>
-                <th class="small-hide right medium-hide large-up-hide small-hide caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
+                <th
+                  class="caption-with-letter-spacing medium-hide large-up-hide small-hide right"
+                  colspan="2"
+                  scope="col"
+                >
+                  {{ 'sections.cart.headings.product' | t }}
+                </th>
+                <th
+                  class="medium-hide medium-hide large-up-hide small-hide large-up-hide right caption-with-letter-spacing"
+                  colspan="1"
+                  scope="col"
+                >
+                  {{ 'sections.cart.headings.total' | t }}
+                </th>
+                <th
+                  class="cart-items__heading--wide medium-hide large-up-hide small-hide small-hide caption-with-letter-spacing"
+                  colspan="1"
+                  scope="col"
+                >
+                  {{ 'sections.cart.headings.quantity' | t }}
+                </th>
+                <th
+                  class="small-hide right medium-hide large-up-hide small-hide caption-with-letter-spacing"
+                  colspan="1"
+                  scope="col"
+                >
+                  {{ 'sections.cart.headings.total' | t }}
+                </th>
               </tr>
             </thead>
 
@@ -82,15 +102,16 @@
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                       <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
-                        <div class="cart-item__image-container gradient global-media-settings">
-                          <img src="{{ item.image | image_url: width: 300 }}"
-                            class="cart-item__image"
-                            alt="{{ item.image.alt | escape }}"
-                            loading="lazy"
-                            width="150"
-                            height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                          >
-                        </div>
+                      <div class="cart-item__image-container gradient global-media-settings">
+                        <img
+                          src="{{ item.image | image_url: width: 300 }}"
+                          class="cart-item__image"
+                          alt="{{ item.image.alt | escape }}"
+                          loading="lazy"
+                          width="150"
+                          height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                        >
+                      </div>
                     {% endif %}
                   </td>
 
@@ -99,9 +120,9 @@
                       {%- if settings.show_vendor -%}
                         <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                       {%- endif -%}
-  
+
                       <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
-  
+
                       {%- if item.original_price != item.final_price -%}
                         <div class="cart-item__discounted-prices">
                           <span class="visually-hidden">
@@ -122,23 +143,26 @@
                           {{ item.original_price | money }}
                         </div>
                       {%- endif -%}
-  
-                      {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
+
+                      {%- if item.product.has_only_default_variant == false
+                        or item.properties.size != 0
+                        or item.selling_plan_allocation != null
+                      -%}
                         <dl>
                           {%- if item.product.has_only_default_variant == false -%}
                             {%- for option in item.options_with_values -%}
                               <div class="product-option">
-                                <dt>{{ option.name }}: </dt>
+                                <dt>{{ option.name }}:</dt>
                                 <dd>{{ option.value }}</dd>
                               </div>
                             {%- endfor -%}
                           {%- endif -%}
-  
+
                           {%- for property in item.properties -%}
                             {%- assign property_first_char = property.first | slice: 0 -%}
                             {%- if property.last != blank and property_first_char != '_' -%}
                               <div class="product-option">
-                                <dt>{{ property.first }}: </dt>
+                                <dt>{{ property.first }}:</dt>
                                 <dd>
                                   {%- if property.last contains '/uploads/' -%}
                                     <a href="{{ property.last }}" class="link" target="_blank">
@@ -152,10 +176,10 @@
                             {%- endif -%}
                           {%- endfor -%}
                         </dl>
-  
+
                         <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                       {%- endif -%}
-  
+
                       <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                         {%- for discount in item.discounts -%}
                           <li class="discounts__discount">
@@ -165,16 +189,19 @@
                         {%- endfor -%}
                       </ul>
                     </div>
-                     <div class="cart-item__quantity-wrapper">
+                    <div class="cart-item__quantity-wrapper">
                       <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                         {{ 'products.product.quantity.label' | t }}
                       </label>
                       <quantity-input class="quantity">
                         <button class="quantity__button no-js-hidden" name="minus" type="button">
-                          <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                          <span class="visually-hidden">
+                            {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
+                          </span>
                           {% render 'icon-minus' %}
                         </button>
-                        <input class="quantity__input"
+                        <input
+                          class="quantity__input"
                           type="number"
                           name="updates[]"
                           value="{{ item.quantity }}"
@@ -184,18 +211,26 @@
                           data-index="{{ item.index | plus: 1 }}"
                         >
                         <button class="quantity__button no-js-hidden" name="plus" type="button">
-                          <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                          <span class="visually-hidden">
+                            {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
+                          </span>
                           {% render 'icon-plus' %}
                         </button>
                       </quantity-input>
-                     </div>
-                    
+                    </div>
                   </td>
 
                   <td class="cart-item__totals right medium-hide large-up-hide small-hide">
                     <div class="loading-overlay hidden">
                       <div class="loading-overlay__spinner">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="spinner"
+                          viewBox="0 0 66 66"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                         </svg>
                       </div>
@@ -229,7 +264,9 @@
                           <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
                           {{ item.variant.unit_price | money }}
                           <span aria-hidden="true">/</span>
-                          <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                          <span class="visually-hidden"
+                            >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
+                          >
                           {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
                             {{- item.variant.unit_price_measurement.reference_value -}}
                           {%- endif -%}
@@ -239,21 +276,32 @@
                     </div>
                   </td>
 
-                  <td style="display: none;"  class="cart-item__quantity">
-                    
-                  </td>
+                  <td style="display: none;" class="cart-item__quantity"></td>
 
                   <td class="cart-item__totals right">
                     <div class="cart-item__quantity-wrapper" style="justify-content: flex-end!important;">
-                      <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                        <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-                         {% render 'icon-remove-2' %}
+                      <cart-remove-button
+                        id="Remove-{{ item.index | plus: 1 }}"
+                        data-index="{{ item.index | plus: 1 }}"
+                      >
+                        <a
+                          href="{{ item.url_to_remove }}"
+                          class="button button--tertiary"
+                          aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                        >
+                          {% render 'icon-remove-2' %}
                         </a>
                       </cart-remove-button>
                     </div>
                     <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
                       <small class="cart-item__error-text"></small>
-                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        role="presentation"
+                        class="icon icon-error"
+                        viewBox="0 0 13 13"
+                      >
                         <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
                         <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
                         <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
@@ -262,7 +310,14 @@
                     </div>
                     <div class="loading-overlay hidden">
                       <div class="loading-overlay__spinner">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          role="presentation"
+                          class="spinner"
+                          viewBox="0 0 66 66"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                         </svg>
                       </div>
@@ -297,7 +352,9 @@
                           <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
                           {{ item.variant.unit_price | money }}
                           <span aria-hidden="true">/</span>
-                          <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                          <span class="visually-hidden"
+                            >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
+                          >
                           {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
                             {{- item.variant.unit_price_measurement.reference_value -}}
                           {%- endif -%}
@@ -315,7 +372,9 @@
     </div>
 
     <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
-    <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
+    <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">
+      {{ 'accessibility.loading' | t }}
+    </p>
   </form>
 </cart-items>
 
@@ -324,7 +383,7 @@
     color: #201616;
     font-size: 56px;
     line-height: 64px;
-    font-family: Karla,sans-serif;
+    font-family: Karla, sans-serif;
     font-weight: 800;
   }
 
@@ -337,13 +396,12 @@
   .cart-item {
     display: flex;
     justify-content: space-between;
-
   }
 
   .title-wrapper-with-link {
     margin-top: 0;
   }
-  
+
   .cart-item__name {
     font-size: 24px;
     line-height: 24px;
@@ -353,16 +411,16 @@
   }
 
   .cart-item__quantity-wrapper {
-    justify-content: flex-start!important;
+    justify-content: flex-start !important;
   }
 
   .cart-item__totals {
-    padding-right: 15px!important;
+    padding-right: 15px !important;
   }
-          
+
   .cart-item__image-container {
     padding: 22px;
-    background-color: #FFF6F3;
+    background-color: #fff6f3;
   }
 
   .product-option {
@@ -373,13 +431,13 @@
   }
 
   .icon-remove {
-    width: 24px!important;
-    height: 24px!important;
+    width: 24px !important;
+    height: 24px !important;
   }
 
   .cart__items {
-    border-bottom: 1px solid #2117171a!important;
-    padding-bottom: 0!important;
+    border-bottom: 1px solid #2117171a !important;
+    padding-bottom: 0 !important;
   }
 
   .cart-item {
@@ -387,13 +445,12 @@
   }
 
   .cart-items td {
-    padding-top: 32px!important;
-    padding-bottom: 32px!important;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
   }
 
-
   .cart-item::before {
-    content: "";
+    content: '';
     top: 0;
     position: absolute;
     width: 100%;
@@ -407,16 +464,17 @@
     border-radius: 4px;
   }
 
-   .quantity::before, .quantity::after {
-     display: none;
-   } 
+  .quantity::before,
+  .quantity::after {
+    display: none;
+  }
 
   .quantity__input {
     font-size: 18px;
   }
 
   .cart-item cart-remove-button {
-    margin-left: 0!important;
+    margin-left: 0 !important;
   }
 
   .price--end {
@@ -433,21 +491,20 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  
+
   .cart__warnings {
-    padding-bottom: 360px!important;
-    padding-top: 172px!important;
+    padding-bottom: 360px !important;
+    padding-top: 172px !important;
   }
-  
+
   .cart__warnings-absolute {
     position: absolute;
     width: 100%;
     left: 0;
   }
-    
-  
+
   .button-empty {
-  	background: #FF5C38;
+    background: #ff5c38;
     border-radius: 8px;
     color: #fff;
     line-height: 24px;
@@ -459,55 +516,54 @@
     display: block;
     margin: 0 auto;
   }
-  
+
   .cart__empty-text {
-  	font-size: 24px;
-    margin-top: 8px!important;
+    font-size: 24px;
+    margin-top: 8px !important;
     font-weight: bold;
   }
 
-
   @media screen and (min-width: 990px) {
-     .cart-item__details {
+    .cart-item__details {
       width: fit-content;
-    } 
+    }
   }
 
   @media screen and (max-width: 600px) {
     .cart__warnings {
-      padding-bottom: 239px!important;
-      padding-top: 137px!important;
+      padding-bottom: 239px !important;
+      padding-top: 137px !important;
     }
     .cart-item__image {
       width: 86px;
       height: 89px;
     }
 
-     .cart-item__image-container {
+    .cart-item__image-container {
       padding: 16px;
-     }
+    }
 
     .cart-item__name {
-       font-size: 16px;
-       line-height: 16px;
-     }
+      font-size: 16px;
+      line-height: 16px;
+    }
 
     .quantity__button {
       width: calc(2.5rem / var(--font-body-scale));
     }
 
-     .quantity__input {
-       font-size: 14px;
-     }
+    .quantity__input {
+      font-size: 14px;
+    }
 
-     .quantity {
-        width: calc(9rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
-     }
+    .quantity {
+      width: calc(9rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+    }
 
-     .title-cart {
-       font-size: 24px;
-       line-height: 24px;
-     }
+    .title-cart {
+      font-size: 24px;
+      line-height: 24px;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -516,50 +572,49 @@
     }
   }
 
+  @media screen and (max-width: 767px) {
+    .cart-items thead tr {
+      border: none;
+      margin: 0;
+    }
 
-   @media screen and (max-width: 767px) {
-  
-     .cart-items thead tr{
-       border: none;
-       margin: 0;
-     }
+    .cart-item__quantity-wrapper {
+      width: 100%;
+      padding-right: 10px;
+    }
 
-      .cart-item__quantity-wrapper {
-        width: 100%;
-        padding-right: 10px;
-      }
+    .cart-item .loading-overlay {
+      top: 44px;
+      left: auto;
+      right: 7px;
+    }
 
-     .cart-item .loading-overlay {
-       top: 44px;
-       left: auto;
-       right: 7px;
-     }
-
-     cart-remove-button .button {
-       display: flex;
-       justify-content: flex-end;
-     }
- }
+    cart-remove-button .button {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 
   @media (min-width: 601px) and (max-width: 768px) {
-    .cart-item__name, .cart__footer-title {
-        font-size: 29px!important;
-        line-height: 39px!important;
-      }
+    .cart-item__name,
+    .cart__footer-title {
+      font-size: 29px !important;
+      line-height: 39px !important;
+    }
 
-    .price, .totals h2, .totals p{
-      font-size: 20px!important;
+    .price,
+    .totals h2,
+    .totals p {
+      font-size: 20px !important;
       line-height: 30px;
     }
 
-    .product-option, .tax-note {
+    .product-option,
+    .tax-note {
       font-size: 18px;
       line-height: 28px;
     }
   }
-
-  
-  
 </style>
 
 {% schema %}
