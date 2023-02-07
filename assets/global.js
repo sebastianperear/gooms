@@ -160,17 +160,19 @@ class QuantityInput extends HTMLElement {
 class QuantityRecomendationInput extends HTMLElement {
   constructor() {
     super();
-
+    
+    
     this.lineItemStatusElement = document.getElementById('shopping-cart-line-item-status') || document.getElementById('CartDrawer-LineItemStatus');
 
     this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
       .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
-
+      this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
     this.debouncedOnChange = debounce((event) => {
       this.onChange(event);
     }, 300);
 
     this.addEventListener('change', this.debouncedOnChange.bind(this));
+    
   }
 
   onChange(event) {
@@ -189,7 +191,7 @@ class QuantityRecomendationInput extends HTMLElement {
 
   updateQuantity(line, quantity, name) {
     this.enableLoading(line);
-
+    
     const body = JSON.stringify({
       line,
       quantity,
@@ -200,29 +202,36 @@ class QuantityRecomendationInput extends HTMLElement {
     fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
       .then((response) => {
         return response.text();
+        
       })
       .then((state) => {
+        
         const parsedState = JSON.parse(state);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
-
+        window.location.reload()
         this.getSectionsToRender().forEach((section => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
           elementToReplace.innerHTML =
             this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
         }));
-
+        
         this.updateLiveRegions(line, parsedState.item_count);
 
-        this.disableLoading();
+
+        
       }).catch(() => {
+        
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         this.disableLoading();
       });
 
+    
 
   }
+
+
 
   enableLoading(line) {
     const mainCartItems = document.getElementById('quantity-items');
