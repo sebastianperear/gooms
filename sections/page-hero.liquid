@@ -60,7 +60,9 @@
         </div>
         <div class="page__hero__content--row">
           <div class="page__hero__content--column-full">
-            <h3>{{ section.settings.product.title }}</h3>
+            {% for tag in section.settings.product.tags %}
+              <button>{{ tag }}</button>
+            {% endfor %}
           </div>
         </div>
       </div>
