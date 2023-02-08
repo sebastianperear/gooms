@@ -5,9 +5,16 @@
       "settings": {
         "product": "gut-health"
       }
+    },
+    "video-section": {
+      "type": "video-section-full",
+      "settings": {
+        "product": "gut-health"
+      }
     }
   },
   "order": [
-    "page-hero"
+    "page-hero",
+    "video-section-full"
   ]
 }
