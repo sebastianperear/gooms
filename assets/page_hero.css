@@ -20,6 +20,15 @@
     padding: 0 6rem;
 }
 
+.page__hero__content--column-full {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex: 1;
+    justify-content: stretch;
+    align-items: center;
+}
+
 .page__hero__content--image {
     display: flex;
     justify-content: flex-end;
