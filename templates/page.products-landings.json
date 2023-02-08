@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "page-hero"
+  ]
+}
