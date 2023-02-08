@@ -84,6 +84,16 @@ a.page__hero-btn {
     color:#fff;
 }
 
+.page__hero__content--column-full span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
 
 
 @media (max-width: 575.98px) {

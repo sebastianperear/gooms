@@ -3,9 +3,6 @@
     "page-hero": {
       "type": "page-hero",
       "settings": {
-        "product": "gut-health",
-        "title_section": "",
-        "description_section": ""
       }
     }
   },
