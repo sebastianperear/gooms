@@ -3,7 +3,7 @@
   <div class="full-width">
     <div
       class="page__hero__content"
-      style="background-color: {{section.settings.product.metafields.custom.color_primario}}"
+      style="background-color: {{section.settings.product.metafields.custom.color_secundario}}"
     >
       <div class="page-width page__hero__container">
         <div class="page__hero__content--row">
@@ -39,7 +39,7 @@
               >
               <h3
                 class="page__hero--title"
-                style="color:{{ section.settings.product.metafields.custom.color_de_fuente_del_texto_del_hover_de_inicio }} "
+                style="color:{{ section.settings.product.metafields.custom.color_primario }} "
               >
                 {{ section.settings.product.title }}
               </h3>
@@ -61,7 +61,7 @@
         <div class="page__hero__content--row">
           <div class="page__hero__content--column-full">
             {% for tag in section.settings.product.tags %}
-              <span>{{ tag }}</span>
+              <span style="color:{{ section.settings.product.metafields.custom.color_terciario }}">{{ tag }}</span>
             {% endfor %}
           </div>
         </div>
@@ -79,37 +79,6 @@
       "type": "product",
       "id": "product",
       "label": "Producto"
-    },
-    {
-      "type": "text",
-      "id": "title_section",
-      "label": "Title"
-    },
-
-    {
-      "type": "text",
-      "id": "description_section",
-      "label": "Description section"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "column",
-      "name": "t:sections.multicolumn.blocks.column.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "default": "Column",
-          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
-        }
-      ]
     }
   ]
 }
