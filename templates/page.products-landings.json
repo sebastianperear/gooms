@@ -3,13 +3,13 @@
     "page-hero": {
       "type": "page-hero",
       "settings": {
-        "product": "gut-health"
+        "product": ""
       }
     },
     "14ef62c9-81b8-4fd1-b561-12491d0b3c9b": {
       "type": "video-section-full",
       "settings": {
-        "product": "gut-health",
+        "product": "",
         "heading_size": "h1",
         "cover_image": "shopify:\/\/shop_images\/Captura_de_Pantalla_2022-11-23_a_la_s_7.50.16_p.m_1.png",
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
