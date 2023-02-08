@@ -6,15 +6,23 @@
         "product": "gut-health"
       }
     },
-    "video-section": {
+    "14ef62c9-81b8-4fd1-b561-12491d0b3c9b": {
       "type": "video-section-full",
       "settings": {
-        "product": "gut-health"
+        "product": "gut-health",
+        "heading_size": "h1",
+        "cover_image": "shopify:\/\/shop_images\/Captura_de_Pantalla_2022-11-23_a_la_s_7.50.16_p.m_1.png",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "page-hero",
-    "video-section-full"
+    "14ef62c9-81b8-4fd1-b561-12491d0b3c9b"
   ]
 }
