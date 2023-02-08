@@ -1,11 +1,11 @@
-{{ 'page-hero.css' | asset_url | stylesheet_tag }}
+{{ 'page_hero.css' | asset_url | stylesheet_tag }}
 <section class="page__hero">
   <div class="full-width">
     <div
       class="page__hero__content"
       style="background-color: {{section.settings.product.metafields.custom.color_primario}}"
     >
-      <div class="page-width">
+      <div class="page-width page__hero__container">
         <div class="page__hero__content--row">
           <div class="page__hero__content--column">
             <div class="page__hero__content--image ">
@@ -32,28 +32,37 @@
             </div>
           </div>
           <div class="page__hero__content--column">
-            <div class="page__hero__content--image ">
+            <div class="page__hero__content--text ">
               <img
-                srcset="
-                  {%- if section.settings.product.featured_media.preview_image.width >= 165 -%}{{ section.settings.product.featured_media.preview_image | image_url: width: 165 }} 165w,{%- endif -%}
-                  {%- if section.settings.product.featured_media.preview_image.width >= 360 -%}{{ section.settings.product.featured_media.preview_image | image_url: width: 360 }} 360w,{%- endif -%}
-                  {%- if section.settings.product.featured_media.preview_image.width >= 533 -%}{{ section.settings.product.featured_media.preview_image | image_url: width: 533 }} 533w,{%- endif -%}
-                  {%- if section.settings.product.featured_media.preview_image.width >= 720 -%}{{ section.settings.product.featured_media.preview_image | image_url: width: 720 }} 720w,{%- endif -%}
-                  {%- if section.settings.product.featured_media.preview_image.width >= 940 -%}{{ section.settings.product.featured_media.preview_image | image_url: width: 940 }} 940w,{%- endif -%}
-                  {%- if section.settings.product.featured_media.preview_image.width >= 1066 -%}{{ section.settings.product.featured_media.preview_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                  {{ section.settings.product.featured_media.preview_image | image_url }} {{ section.settings.product.featured_media.preview_image.width }}w
-                "
-                src="{{ section.settings.product.featured_media.preview_image | image_url: width: 533 }}"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                alt="{{ section.settings.product.featured_media.preview_image.alt | escape }}"
-                class="motion-reduce"
-                {% unless lazy_load == false %}
-                  loading="lazy"
-                {% endunless %}
-                width="{{ section.settings.product.featured_media.preview_image.width }}"
-                height="{{ section.settings.product.featured_media.preview_image.height }}"
+                src=" {{ section.settings.product.metafields.custom.icon_product |image_url }}"
+                class="page__hero__content--icono mobile"
+              >
+              <h3
+                class="page__hero--title"
+                style="color:{{ section.settings.product.metafields.custom.color_de_fuente_del_texto_del_hover_de_inicio }} "
+              >
+                {{ section.settings.product.title }}
+              </h3>
+              <img
+                src=" {{ section.settings.product.metafields.custom.icon_product |image_url }}"
+                class="page__hero__content--icono desktop"
+              >
+              <p>{{ section.settings.product.metafields.custom.descripci_n_del_hover_de_inicio }}</p>
+
+              <a
+                href="{{ section.settings.product.url }}"
+                class="page__hero-btn"
+                style="background-color: {{ section.settings.product.metafields.custom.background_del_hover }};"
+                >Comprar ahora</a
               >
             </div>
+          </div>
+        </div>
+        <div class="page__hero__content--row">
+          <div class="page__hero__content--column-full">
+            {% for tag in section.settings.product.tags %}
+              <button>{{ tag }}</button>
+            {% endfor %}
           </div>
         </div>
       </div>
