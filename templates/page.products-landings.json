@@ -1,13 +1,13 @@
 {
-    "sections": {
-      "page-hero": {
-        "type": "page-hero"
-
-        }
-
-      },
-    
-    "order": [
-      "page-hero"
-    ]
-  }
+  "sections": {
+    "page-hero": {
+      "type": "page-hero",
+      "settings": {
+        "product": "gut-health"
+      }
+    }
+  },
+  "order": [
+    "page-hero"
+  ]
+}
