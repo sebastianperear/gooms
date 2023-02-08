@@ -20,6 +20,15 @@
     padding: 0 6rem;
 }
 
+.page__hero__content--column-full {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex: 1;
+    justify-content: stretch;
+    align-items: center;
+}
+
 .page__hero__content--image {
     display: flex;
     justify-content: flex-end;
@@ -73,6 +82,16 @@ a.page__hero-btn {
     border-radius: 8px;
     text-decoration: none;
     color:#fff;
+}
+
+.page__hero__content--column-full span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    background: #FFFFFF;
+    border-radius: 40px;
 }
 
 
