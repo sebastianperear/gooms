@@ -218,6 +218,11 @@ html.no-js .no-js-hidden {
   padding: 0 1.5rem;
 }
 
+.full-width {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .page-width-desktop {
   padding: 0;
   margin: 0 auto;
