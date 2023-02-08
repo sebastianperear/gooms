@@ -608,6 +608,7 @@
 
   .collection .grid__item {
     padding: 20px;
+    margin-bottom: auto;
   }
 }
 
