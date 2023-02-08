@@ -1277,6 +1277,9 @@
         "show_vendor": {
           "label": "Mostrar proveedor"
         },
+        "show_price": {
+          "label": "Mostrar Precio"
+        },
         "enable_tags": {
           "label": "Habilitar filtrado",
           "info": "[Personalizar filtros](\/admin\/menus)"

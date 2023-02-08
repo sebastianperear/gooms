@@ -253,6 +253,12 @@
 .card--standard > .card__content .card__information {
   padding-left: 0;
   padding-right: 0;
+  
+}
+
+.collection__content .card__content .card__information {
+  text-align:center;
+  
 }
 
 .card--card.card--media .card__inner .card__information,

@@ -2,6 +2,7 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-collection-product-grid.css' | asset_url | stylesheet_tag }}
 
 <link
   rel="preload"
@@ -25,8 +26,8 @@
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-right: 2%;
+      padding-left: 2%;
     }
   }
 {%- endstyle -%}
@@ -156,13 +157,14 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                <li class="grid__item">
-                  {% render 'card-product',
+                <li class="grid__item collection__content">
+                  {% render 'card-product-collections',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     show_secondary_image: section.settings.show_secondary_image,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
+                    show_price: section.settings.show_price,
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
@@ -252,6 +254,12 @@
       "id": "enable_quick_add",
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_price",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_price.label"
     },
     {
       "type": "header",
