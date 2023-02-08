@@ -22,11 +22,17 @@
 
 .page__hero__content--column-full {
     display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
+    justify-content: center;
     flex: 1;
-    justify-content: stretch;
-    align-items: center;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    padding: 30px
+}
+
+@media (max-width: 575.98px) {
+    .page__hero__content--column-full {
+        padding: 0px;
+    }
 }
 
 .page__hero__content--image {
@@ -78,7 +84,7 @@ h3.page__hero--title {
 }
 
 a.page__hero-btn {
-    padding: 6px 15px;
+    padding: 15px 40px;
     border-radius: 8px;
     text-decoration: none;
     color:#fff;
@@ -92,6 +98,9 @@ a.page__hero-btn {
     gap: 10px;
     background: #FFFFFF;
     border-radius: 40px;
+    margin-right: 2rem;
+    font-weight: 700;
+    
 }
 
 
