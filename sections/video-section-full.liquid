@@ -18,8 +18,10 @@
     }
   }
 {%- endstyle -%}
+{% assign handle = page.handle %}
+{% assign product = all_products[handle] %}
 
-<div style="background-color:{{section.settings.product.metafields.custom.color_primario}};">
+<div style="background-color:{{product.metafields.custom.color_primario}};">
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
     <div
       {% if section.settings.full_width %}
@@ -40,22 +42,22 @@
           {%- if section.settings.cover_image != blank -%}
             <img
               srcset="
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 375 -%}{{ section.settings.cover_image | image_url: width: 375 }} 375w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 750 -%}{{ section.settings.cover_image | image_url: width: 750 }} 750w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 1100 -%}{{ section.settings.cover_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 1500 -%}{{ section.settings.cover_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 1780 -%}{{ section.settings.cover_image | image_url: width: 1780 }} 1780w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 2000 -%}{{ section.settings.cover_image | image_url: width: 2000 }} 2000w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 3000 -%}{{ section.settings.cover_image | image_url: width: 3000 }} 3000w,{%- endif -%}
-                {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 3840 -%}{{ section.settings.cover_image | image_url: width: 3840 }} 3840w,{%- endif -%}
-                {{ section.settings.section.settings.product.metafields.custom.imagen_de_portada_video | image_url }} {{ section.settings.product.metafields.custom.imagen_de_portada_video.width }}w
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 375 -%}{{ section.settings.cover_image | image_url: width: 375 }} 375w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 750 -%}{{ section.settings.cover_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 1100 -%}{{ section.settings.cover_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 1500 -%}{{ section.settings.cover_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 1780 -%}{{ section.settings.cover_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 2000 -%}{{ section.settings.cover_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 3000 -%}{{ section.settings.cover_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {%- if product.metafields.custom.imagen_de_portada_video.width >= 3840 -%}{{ section.settings.cover_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+                {{ section.settings.product.metafields.custom.imagen_de_portada_video | image_url }} {{ product.metafields.custom.imagen_de_portada_video.width }}w
               "
-              src="{{ section.settings.section.settings.product.metafields.custom.imagen_de_portada_video | image_url: width: 1920 }}"
+              src="{{ section.settings.product.metafields.custom.imagen_de_portada_video | image_url: width: 1920 }}"
               sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw{% endif %}"
               alt="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
               loading="lazy"
-              width="{{ section.settings.product.metafields.custom.imagen_de_portada_video.width }}"
-              height="{{ section.settings.section.settings.product.metafields.custom.imagen_de_portada_video.height }}"
+              width="{{ product.metafields.custom.imagen_de_portada_video.width }}"
+              height="{{ section.settings.product.metafields.custom.imagen_de_portada_video.height }}"
             >
           {%- else -%}
             {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
@@ -65,13 +67,13 @@
     </noscript>
     <deferred-media
       class="video-section__media deferred-media no-js-hidden gradient global-media-settings{% if section.settings.full_width %} global-media-settings--full-width{% endif %}"
-      data-media-id="{{ section.settings.product.metafields.custom.video}}"
+      data-media-id="{{ product.metafields.custom.video}}"
       {% if section.settings.cover_image != blank %}
         style="padding-bottom: {{ 1 | divided_by: section.settings.cover_image.aspect_ratio | times: 100 }}%;"
       {% endif %}
     >
       <button
-        id="Deferred-Poster-Modal-{{ section.settings.product.metafields.custom.video}}"
+        id="Deferred-Poster-Modal-{{ product.metafields.custom.video}}"
         class="video-section__poster media deferred-media__poster media--landscape"
         type="button"
         aria-label="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
@@ -79,21 +81,21 @@
         {%- if section.settings.cover_image != blank -%}
           <img
             srcset="
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 375 -%}{{ section.settings.cover_image | image_url: width: 375 }} 375w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 750 -%}{{ section.settings.cover_image | image_url: width: 750 }} 750w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 1100 -%}{{ section.settings.cover_image | image_url: width: 1100 }} 1100w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 1500 -%}{{ section.settings.cover_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 1780 -%}{{ section.settings.cover_image | image_url: width: 1780 }} 1780w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 2000 -%}{{ section.settings.cover_image | image_url: width: 2000 }} 2000w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 3000 -%}{{ section.settings.cover_image | image_url: width: 3000 }} 3000w,{%- endif -%}
-              {%- if section.settings.product.metafields.custom.imagen_de_portada_video.width >= 3840 -%}{{ section.settings.cover_image | image_url: width: 3840 }} 3840w,{%- endif -%}
-              {{ section.settings.cover_image | image_url }} {{ section.settings.product.metafields.custom.imagen_de_portada_video.width }}w
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 375 -%}{{ section.settings.cover_image | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 750 -%}{{ section.settings.cover_image | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 1100 -%}{{ section.settings.cover_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 1500 -%}{{ section.settings.cover_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 1780 -%}{{ section.settings.cover_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 2000 -%}{{ section.settings.cover_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 3000 -%}{{ section.settings.cover_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {%- if product.metafields.custom.imagen_de_portada_video.width >= 3840 -%}{{ section.settings.cover_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+              {{ section.settings.cover_image | image_url }} {{ product.metafields.custom.imagen_de_portada_video.width }}w
             "
             src="{{ section.settings.cover_image | image_url: width: 1920 }}"
             sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw{% endif %}"
             alt="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
             loading="lazy"
-            width="{{ section.settings.product.metafields.custom.imagen_de_portada_video.width }}"
+            width="{{ product.metafields.custom.imagen_de_portada_video.width }}"
             height="{{ section.settings.cover_image.height }}"
           >
         {%- else -%}
@@ -105,7 +107,7 @@
       </button>
       <template>
         <iframe
-          src="https://www.youtube.com/embed/{{ section.settings.product.metafields.custom.video_url }}?enablejsapi=1"
+          src="https://www.youtube.com/embed/{{ product.metafields.custom.video_url }}?enablejsapi=1"
           class="js-youtube"
           allow="autoplay; encrypted-media"
           allowfullscreen
