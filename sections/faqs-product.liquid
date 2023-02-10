@@ -69,29 +69,31 @@
 {% assign handle = page.handle %}
 {% assign product = all_products[handle] %}
 
-<a href="#" class="togglefaq"><i class="icon-plus"></i> How do you tell an introverted computer scientist from an extroverted computer scientist?</a>
-<div class="faqanswer">
-  <p>An extroverted computer scientist looks at <em>your</em> shoes when he talks to you.
-  </p>
-</div>
 
-<a href="#" class="togglefaq"><i class="icon-plus"></i> How many programmers does it take to change a light bulb?</a>
-  <div class="faqanswer">
-    <p>None, that's a hardware problem.
-  </p>
-</div>
 
-<a href="#" class="togglefaq"><i class="icon-plus"></i> What's the object-oriented way to become wealthy?</a>
-  <div class="faqanswer">
-    <p>Inheritance.
-  </p>
-</div>    
-
-<a href="#" class="togglefaq"><i class="icon-plus"></i> Why do programmers like UNIX?</a>
-  <div class="faqanswer">
-    <p>unzip, strip, touch, finger, grep, mount, fsck, more, yes, fsck, fsck, fsck, umount, sleep
-  </p>
-</div>
+<section class="faqs-section" >
+  <div class="page-width" >
+    <div class="faqs-header" >
+      <img src="{{ section.settings.icon_image | img_url: '800x' }}">
+      <h1 class="faqs-title" > {{ section.settings.title_section }} </h1>
+      <p class="faqs-description">{{ section.settings.description_section }}</p>
+    </div>
+    <div class="faqs-list" >
+      {%- for block in section.blocks -%}
+        <div class="faqs-item__content" >
+          <a href="#" class="togglefaq faqs-list__item collapsible"><i class="icon-plus"></i> {%- if block.settings.title != blank -%}
+              <h3 class="faqs-item__title" >{{ block.settings.title | escape }}</h3>{%- endif -%}
+          </a>
+          
+          <div class="content faqanswer">
+            <div>{{ block.settings.text }}</div>
+          </div>
+        </div>
+        
+      {%- endfor -%}    
+    </div>
+  </div>
+</section>
 
 
 <div style="background-color:{{product.metafields.custom.color_primario}};">
