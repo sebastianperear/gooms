@@ -95,7 +95,7 @@
     <div class="faqs-list" >
       {%- for block in section.blocks -%}
         <div class="faqs-item__content" >
-          <a href="#" class="togglefaq faqs-list__item collapsible" style="::before {color: red;}" > {%- if block.settings.title != blank -%}
+          <a href="#" class="togglefaq faqs-list__item collapsible" style="faqs-list__item::before {color: red;}" > {%- if block.settings.title != blank -%}
               <h3 class="faqs-item__title" >{{ block.settings.title | escape }}</h3>{%- endif -%}
               <svg
                 class="icon-faqs"
