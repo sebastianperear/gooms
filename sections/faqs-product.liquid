@@ -15,9 +15,84 @@
     padding-left: 20vw;
     }
   }
+
+    /* FAQ COLLAPSE/EXPAND STYLES */
+  * {
+    box-sizing: border-box;
+  }
+  .faqanswer {
+  	display: none;
+  	width: 590px;
+  	background: #e5e5e5;
+  	padding: 12px 20px 0 30px;	
+  }
+  
+  .faqanswer p {
+  	font-size: 13px;
+  	line-height: 17px;	
+  }
+  
+  
+  a.active {
+  	font-weight: bold;
+  }
+  
+  .togglefaq {
+  	text-decoration: none;
+  	color: #333;
+  	font-size: 13px;
+  	padding: 10px 30px;
+  	line-height: 20px;
+  	display: block;
+  	border: 1px solid #d0d0d0;
+  	width: 590px;
+  	margin-bottom: -1px;
+  }
+  .icon-plus {
+  	color: #5ec4cd;
+  	margin-right: 20px;
+  	font-size: 20px;
+  	float:left;
+  }
+  
+  .icon-minus {
+  	color: #5ec4cd;
+  	margin-right: 20px;
+  	font-size: 20px;
+  	float:left;
+  }
+  p {
+    margin: 0;
+    padding-bottom: 20px;
+  }
 {%- endstyle -%}
 {% assign handle = page.handle %}
 {% assign product = all_products[handle] %}
+
+<a href="#" class="togglefaq"><i class="icon-plus"></i> How do you tell an introverted computer scientist from an extroverted computer scientist?</a>
+<div class="faqanswer">
+  <p>An extroverted computer scientist looks at <em>your</em> shoes when he talks to you.
+  </p>
+</div>
+
+<a href="#" class="togglefaq"><i class="icon-plus"></i> How many programmers does it take to change a light bulb?</a>
+  <div class="faqanswer">
+    <p>None, that's a hardware problem.
+  </p>
+</div>
+
+<a href="#" class="togglefaq"><i class="icon-plus"></i> What's the object-oriented way to become wealthy?</a>
+  <div class="faqanswer">
+    <p>Inheritance.
+  </p>
+</div>    
+
+<a href="#" class="togglefaq"><i class="icon-plus"></i> Why do programmers like UNIX?</a>
+  <div class="faqanswer">
+    <p>unzip, strip, touch, finger, grep, mount, fsck, more, yes, fsck, fsck, fsck, umount, sleep
+  </p>
+</div>
+
 
 <div style="background-color:{{product.metafields.custom.color_primario}};">
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
@@ -29,6 +104,18 @@
   
   </div>
 </div>
+
+<script>
+  //faq toggle stuff 
+  $('.togglefaq').click(function(e) {
+  e.preventDefault();
+  var notthis = $('.active').not(this);
+  notthis.find('.icon-minus').addClass('icon-plus').removeClass('icon-minus');
+  notthis.toggleClass('active').next('.faqanswer').slideToggle(300);
+   $(this).toggleClass('active').next().slideToggle("fast");
+  $(this).children('i').toggleClass('icon-plus icon-minus');
+  });
+</script>
 
 {% schema %}
 {
