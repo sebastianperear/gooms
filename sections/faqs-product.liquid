@@ -81,11 +81,6 @@
 
 <section class="faqs-section" >
   <div class="page-width" >
-    <div class="faqs-header" >
-      <img src="{{ section.settings.icon_image | img_url: '800x' }}">
-      <h1 class="faqs-title" > {{ section.settings.title_section }} </h1>
-      <p class="faqs-description">{{ section.settings.description_section }}</p>
-    </div>
     <div class="faqs-list" >
       {%- for block in section.blocks -%}
         <div class="faqs-item__content" >
