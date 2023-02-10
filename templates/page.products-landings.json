@@ -26,21 +26,35 @@
         "8aaa3bb2-ebd7-4499-b1bf-a83575833655": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "¿Cada cuánto puedo tomar Mental ease?",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         },
         "70df2430-db21-4ad4-ab8c-cdc27661d305": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "¿Que contiene cada goma de Mental ease?",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         },
         "e6c198ab-456e-4fbc-81ea-d2805b75f154": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "¿Cuál es el mayor beneficios de Mental ease?",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "723984f4-c3f3-4a39-8a2e-3d35faff794f": {
+          "type": "column",
+          "settings": {
+            "title": "¿Qué pasa si estoy tomando mas de dos referencias?",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "0a7458de-70e1-462e-a503-43654d4d63b7": {
+          "type": "column",
+          "settings": {
+            "title": "¿Qué pasa si la goma la tomo en horas diferentes?",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         }
@@ -48,7 +62,9 @@
       "block_order": [
         "8aaa3bb2-ebd7-4499-b1bf-a83575833655",
         "70df2430-db21-4ad4-ab8c-cdc27661d305",
-        "e6c198ab-456e-4fbc-81ea-d2805b75f154"
+        "e6c198ab-456e-4fbc-81ea-d2805b75f154",
+        "723984f4-c3f3-4a39-8a2e-3d35faff794f",
+        "0a7458de-70e1-462e-a503-43654d4d63b7"
       ],
       "settings": {
         "product": ""
