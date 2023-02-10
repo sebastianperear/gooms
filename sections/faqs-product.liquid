@@ -39,15 +39,8 @@
   
   .togglefaq {
   	text-decoration: none;
-  	color: #333;
-  	font-size: 13px;
-  	padding: 10px 30px;
-  	line-height: 20px;
-  	display: block;
-  	border: 1px solid #d0d0d0;
-  	width: 590px;
-  	margin-bottom: -1px;
   }
+  
   .icon-plus {
   	color: #5ec4cd;
   	margin-right: 20px;
@@ -61,9 +54,23 @@
   	font-size: 20px;
   	float:left;
   }
+  
   p {
     margin: 0;
     padding-bottom: 20px;
+  }
+
+  .collapsible {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    background: none;
+    outline: none;
+    font-size: 15px;
   }
 {%- endstyle -%}
 {% assign handle = page.handle %}
