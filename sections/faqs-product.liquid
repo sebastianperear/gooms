@@ -84,7 +84,7 @@
     <div class="faqs-list" >
       {%- for block in section.blocks -%}
         <div class="faqs-item__content" >
-          <a href="#" class="togglefaq faqs-list__item collapsible"><i class="icon-plus"></i> {%- if block.settings.title != blank -%}
+          <a href="#" class="togglefaq faqs-list__item collapsible"> {%- if block.settings.title != blank -%}
               <h3 class="faqs-item__title" >{{ block.settings.title | escape }}</h3>{%- endif -%}
           </a>
           
