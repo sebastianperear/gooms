@@ -79,7 +79,7 @@
 
 
 
-<section class="faqs-section" >
+<section style="background-color: {{ section.settings.primary_color }}" class="faqs-section" >
   <div class="page-width" >
     <div class="faqs-list" >
       {%- for block in section.blocks -%}
@@ -98,17 +98,6 @@
   </div>
 </section>
 
-
-<div style="background-color:{{product.metafields.custom.color_primario}};">
-  <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
-    <div
-      {% if section.settings.full_width %}
-        class="page-width"
-      {% endif %}
-    ></div>
-  
-  </div>
-</div>
 
 <script>
   //faq toggle stuff 
