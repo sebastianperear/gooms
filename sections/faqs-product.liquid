@@ -23,15 +23,20 @@
   .faqanswer {
   	display: none;
   }
-  
-  .faqanswer p {
-  	font-size: 13px;
-  	line-height: 17px;	
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
   }
   
-  
-  a.active {
-  	font-weight: bold;
+  .faqs-item__content .content p {
+      font-weight: 300;
+      color: #201616;
+      margin-bottom: 0;
+      margin-top: 24px;
+      font-size: 20px;
+      font-family: Karla,sans-serif;
   }
   
   .togglefaq {
