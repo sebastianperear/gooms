@@ -36,6 +36,11 @@
   text-decoration: none;
 }
 
+.js details[open]>.menu-drawer {
+  transform: translate(0);
+  visibility: visiblel;
+}
+
 .announcement-bar  {
   background: #FF5C38;
   border-bottom: none;
