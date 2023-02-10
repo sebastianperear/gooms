@@ -22,6 +22,34 @@
     },
     "7f8856dc-e13f-408d-984c-a904c4bb23a1": {
       "type": "faqs-product",
+      "blocks": {
+        "8aaa3bb2-ebd7-4499-b1bf-a83575833655": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "70df2430-db21-4ad4-ab8c-cdc27661d305": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "e6c198ab-456e-4fbc-81ea-d2805b75f154": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8aaa3bb2-ebd7-4499-b1bf-a83575833655",
+        "70df2430-db21-4ad4-ab8c-cdc27661d305",
+        "e6c198ab-456e-4fbc-81ea-d2805b75f154"
+      ],
       "settings": {
         "product": ""
       }
