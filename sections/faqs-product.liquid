@@ -90,7 +90,7 @@
 {% assign product = all_products[handle] %}
 
 
-<section style="background-color: {{ section.settings.primary_color }}" class="faqs-section" >
+<section style="background-color:{{product.metafields.custom.color_secundario}};" class="faqs-section" >
   <div class="page-width" >
     <div class="faqs-list" >
       {%- for block in section.blocks -%}
@@ -118,7 +118,7 @@
                 id="g246"
                 transform="translate(3.9307317,4.0316531)"><path
                  d="M 6.41403,9 H 17.586 c 0.1978,4e-5 0.3911,0.05871 0.5555,0.1686 0.1644,0.10988 0.2925,0.26605 0.3682,0.44874 0.0757,0.1827 0.0955,0.38376 0.0569,0.57766 -0.0386,0.194 -0.1338,0.3721 -0.2736,0.512 l -5.586,5.586 c -0.1875,0.1875 -0.4418,0.2928 -0.707,0.2928 -0.2651,0 -0.5194,-0.1053 -0.707,-0.2928 L 5.70703,10.707 C 5.56722,10.5671 5.47202,10.389 5.43345,10.195 5.39488,10.0011 5.41468,9.80004 5.49035,9.61734 5.56602,9.43465 5.69416,9.27848 5.85857,9.1686 6.02298,9.05871 6.21628,9.00004 6.41403,9 Z"
-                 fill="{{ section.settings.primary_color }}"
+                 fill="{{product.metafields.custom.color_secundario}}"
                  id="path237" /></g>
               </svg>
           </a>
