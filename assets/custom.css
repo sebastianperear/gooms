@@ -38,7 +38,7 @@
 
 .js details[open]>.menu-drawer {
   transform: translate(0);
-  visibility: visiblel;
+  visibility: visible;
 }
 
 .announcement-bar  {
