@@ -67,7 +67,9 @@
         "0a7458de-70e1-462e-a503-43654d4d63b7"
       ],
       "settings": {
-        "product": ""
+        "product": "",
+        "primary_color": "#9edec3",
+        "secondary_color": "#0061a0"
       }
     }
   },
