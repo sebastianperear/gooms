@@ -72,9 +72,10 @@ h3.page__hero--title {
 
 .page__hero__content--icono {
     display: inline-block;
-    width: 80px;
+    width: 48px;
     position: relative;
-    height: 80px;
+    height: auto;
+    object-fit: contain;
     top: -4rem;
     left: -6rem;
 }
