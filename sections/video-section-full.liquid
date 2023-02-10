@@ -21,7 +21,7 @@
 {% assign handle = page.handle %}
 {% assign product = all_products[handle] %}
 
-<div style="background-color:{{product.metafields.custom.color_primario}};">
+<div style="background-color:{{ product.metafields.custom.color_primario }};">
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
     <div
       {% if section.settings.full_width %}
