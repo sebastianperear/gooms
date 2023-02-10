@@ -16,16 +16,19 @@
     }
   }
 
-    /* FAQ COLLAPSE/EXPAND STYLES */
+  /* FAQ COLLAPSE/EXPAND STYLES */
   * {
     box-sizing: border-box;
+  }
+
+  .faqs-list__item:before {
+    color: {{ section.settings.primary_color }};
   }
   .faqanswer {
   	display: none;
   }
 
   .content {
-    
     transition: max-height 0.2s ease-out;
   }
   
