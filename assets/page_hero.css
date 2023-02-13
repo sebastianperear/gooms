@@ -75,7 +75,8 @@ h3.page__hero--title {
     position: relative;
     height: auto;
     object-fit: contain;
-    margin-top: 12px;
+    margin-top: 8px;
+    margin-left: 10px;
 }
 
 .page__hero__flex {
