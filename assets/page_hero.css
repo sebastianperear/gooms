@@ -79,6 +79,11 @@ h3.page__hero--title {
     margin-top: 12px;
 }
 
+.page__hero__flex {
+    display: flex;
+    align-items: flex-start;
+}
+
 .page__hero__content--text p {
     font-size: 2rem;
 }
