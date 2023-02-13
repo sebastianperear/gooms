@@ -413,31 +413,17 @@
             {%- when 'collapsible_tab' -%}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
-                  <summary>
-                    <div class="summary__title">
-                      {% render 'icon-accordion', icon: block.settings.icon %}
-                      <h2 class="h4 accordion__title">
+                  <a href="#" class="togglefaq"><i class="icon-plus"></i> 
+                     <h2 class="h4 accordion__title">
                         {{ block.settings.heading | default: block.settings.page.title }}
-                      </h2>
-                    </div>
-                    {% render 'icon-plus' %}
-                  </summary>
-                  <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                     </h2>
+                  </a>
+            
+                  <div class="faqanswer" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                     {{ block.settings.content }}
                     {{ block.settings.page.content }}
                   </div>
                 </details>
-                <a href="#" class="togglefaq"><i class="icon-plus"></i> How do you tell an introverted computer scientist from an extroverted computer scientist?</a>
-                <div class="faqanswer">
-                  <p>An extroverted computer scientist looks at <em>your</em> shoes when he talks to you.
-                </p>
-                </div>
-                
-                <a href="#" class="togglefaq"><i class="icon-plus"></i> How many programmers does it take to change a light bulb?</a>
-                <div class="faqanswer">
-                  <p>None, that's a hardware problem.
-                </p>
-                </div>
               </div>
             {%- when 'quantity_selector' -%}
               <div
