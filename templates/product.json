@@ -82,7 +82,7 @@
           "settings": {
             "heading": "Descripción",
             "icon": "none",
-            "content": "<p>{{ shop.brand.short_description }}<\/p>",
+            "content": "<p>{{ product.metafields.custom.descripci_n | metafield_tag }}<\/p>",
             "page": ""
           }
         },
