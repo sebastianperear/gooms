@@ -266,3 +266,9 @@ a.page__hero-btn {
         display: none;
     }
 }
+
+@media (max-width: 767px) {
+   .page__hero--title br {
+    display: none;
+  } 
+}
