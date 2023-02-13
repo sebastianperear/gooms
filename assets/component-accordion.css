@@ -22,8 +22,15 @@
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: 0.1rem solid #201616;
-  border-bottom: 0.1rem solid #201616;
+  position: relative;
+  border: none;
+}
+
+.accordion::before, .accordion::after {
+  content: '';
+  width: 100%;
+  height: 0.4px;
+  background: #201616;
 }
 
 .accordion__title {
