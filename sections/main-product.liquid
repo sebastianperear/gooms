@@ -417,8 +417,11 @@
                      <h2 class="h4 accordion__title">
                         {{ block.settings.heading | default: block.settings.page.title }}
                      </h2>
-                    {% render 'icon-plus' %}
-                    {% render 'icon-minus' %}
+                     <div class="toggle-icon" >
+                        {% render 'icon-plus' %}
+                        {% render 'icon-minus' %}
+                    </div>
+                    
                   </a>
             
                   <div class="toggle-content" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
@@ -1130,6 +1133,10 @@
   .toggle-product .icon-minus, .toggle-product .icon-plus  {
     width: 20px;
     height: 20px;
+  }
+
+  .toggle-product .icon-minus {
+    display: none;
   }
 
 </style>
