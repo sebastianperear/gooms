@@ -29,6 +29,7 @@
 .accordion__title {
   display: inline-block;
   max-width: calc(100% - 6rem);
+  font-size: 18px;
   min-height: 1.6rem;
   margin: 0;
   word-break: break-word;
