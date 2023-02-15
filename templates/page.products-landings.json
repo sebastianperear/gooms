@@ -20,6 +20,14 @@
         "padding_bottom": 36
       }
     },
+    "a1447cd0-ea35-47f0-b7fd-e100a933fbff": {
+      "type": "about-product",
+      "settings": {
+        "product": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "7f8856dc-e13f-408d-984c-a904c4bb23a1": {
       "type": "faqs-product",
       "blocks": {
@@ -73,20 +81,12 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
-    },
-    "a1447cd0-ea35-47f0-b7fd-e100a933fbff": {
-      "type": "about-product",
-      "settings": {
-        "product": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "page-hero",
     "14ef62c9-81b8-4fd1-b561-12491d0b3c9b",
-    "7f8856dc-e13f-408d-984c-a904c4bb23a1",
-    "a1447cd0-ea35-47f0-b7fd-e100a933fbff"
+    "a1447cd0-ea35-47f0-b7fd-e100a933fbff",
+    "7f8856dc-e13f-408d-984c-a904c4bb23a1"
   ]
 }
