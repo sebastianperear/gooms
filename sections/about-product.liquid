@@ -19,8 +19,26 @@
 {% assign handle = page.handle %}
 {% assign product = all_products[handle] %}
 
-<div style="background-color:{{ product.metafields.custom.color_primario }};">
-  
+<div class="product-about" style="background-color:{{ product.metafields.custom.color_primario }};">
+  <div class="product-about__grid" >
+      <div class="product-about__text" >
+        <div>
+          <ul>
+            <li>Calorias {{ product.metafields.custom.color_primario }}</li>
+            <li>Total Carbohidratos {{ product.metafields.custom.color_primario }}</li>
+            <li>Total Azúcares {{ product.metafields.custom.color_primario }}</li>
+            <li>Vitamina D {{ product.metafields.custom.color_primario }}</li>
+            <li>Magnesio {{ product.metafields.custom.color_primario }}</li>
+            <li>Extracto Bálsamo de Limón {{ product.metafields.custom.color_primario }}</li>
+            <li>Melatonina {{ product.metafields.custom.color_primario }}</li>
+            <li>Sodio {{ product.metafields.custom.color_primario }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="product-about__img" >
+    
+      </div>
+  </div>
 </div>
 
 {% schema %}
