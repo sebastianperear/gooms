@@ -57,7 +57,9 @@
         </div>
       </div>
       <div class="product-about__img" >
+        {% if product.metafields.custom.portada_de_la_secci_n_sobre_el_producto != blank %}
         <img src="{{product.metafields.custom.portada_de_la_secci_n_sobre_el_producto}}" >
+        {% endif %}
       </div>
   </div>
 </div>
