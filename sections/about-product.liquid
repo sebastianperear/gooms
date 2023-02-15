@@ -39,11 +39,11 @@
 {% assign handle = page.handle %}
 {% assign product = all_products[handle] %}
 
-<div class="product-about" style="background-color:{{ product.metafields.custom.color_primari }};">
+<div class="product-about" >
   <div class="product-about__grid" >
       <div class="product-about__text" >
         <div>
-          <ul>
+          <ul style="background-color:{{ product.metafields.custom.color_primario }};">
             <li>Calorias <span>{{ product.metafields.custom.calorias }}</span></li>
             <li>Total Carbohidratos <span>{{ product.metafields.custom.total_carbohidratos }}</span></li>
             <li>Total Azúcares <span>{{ product.metafields.custom.total_az_cares }}</span></li>
