@@ -20,6 +20,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  .product-about__text ul li{
+    width: 100%;
+    display: flex;
+    justify-content: 
+  }
 {%- endstyle -%}
 {% assign handle = page.handle %}
 {% assign product = all_products[handle] %}
@@ -29,14 +35,14 @@
       <div class="product-about__text" >
         <div>
           <ul>
-            <li>Calorias {{ product.metafields.custom.calorias }}</li>
-            <li>Total Carbohidratos {{ product.metafields.custom.total_carbohidratos }}</li>
-            <li>Total Azúcares {{ product.metafields.custom.total_az_cares }}</li>
-            <li>Vitamina D {{ product.metafields.custom.vitamina_d }}</li>
-            <li>Magnesio {{ product.metafields.custom.magnesio }}</li>
-            <li>Extracto Bálsamo de Limón {{ product.metafields.custom.extracto_b_lsamo_de_lim_n }}</li>
-            <li>Melatonina {{ product.metafields.custom.melatonina }}</li>
-            <li>Sodio {{ product.metafields.custom.sodio }}</li>
+            <li>Calorias <span>{{ product.metafields.custom.calorias }}</span></li>
+            <li>Total Carbohidratos <span>{{ product.metafields.custom.total_carbohidratos }}</span></li>
+            <li>Total Azúcares <span>{{ product.metafields.custom.total_az_cares }}</span></li>
+            <li>Vitamina D <span>{{ product.metafields.custom.vitamina_d }}</span></li>
+            <li>Magnesio <span>{{ product.metafields.custom.magnesio }}</span></li>
+            <li>Extracto Bálsamo de Limón <span>{{ product.metafields.custom.extracto_b_lsamo_de_lim_n }}</span></li>
+            <li>Melatonina <span>{{ product.metafields.custom.melatonina }}</li>
+            <li>Sodio <span>{{ product.metafields.custom.sodio }}</span></li>
           </ul>
         </div>
       </div>
