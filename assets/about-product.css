@@ -74,3 +74,18 @@
     height: 100%;
     object-fit: cover;
 }
+
+.product-about-container__btn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    bottom: 12%;
+}
+
+a.product-about__btn {
+    padding: 8px 40px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+}

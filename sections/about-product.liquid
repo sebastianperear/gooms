@@ -58,6 +58,14 @@
       </div>
       <div class="product-about__img" >
         <img src="{{product.metafields.custom.portada_de_la_secci_n_sobre_el_producto | image_url }}" >
+        <div class="product-about-container__btn">
+        <a
+          href="{{ product.url }}"
+          class="product-about__btn"
+          style="background-color: {{ product.metafields.custom.background_del_hover }};"
+          >Agregar al carrito</a
+        >
+        </div>
       </div>
   </div>
 </div>
