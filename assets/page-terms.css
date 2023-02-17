@@ -1,0 +1,19 @@
+.page-width.page-width--narrow.page-terms {
+    text-align: justify;
+    padding: 5em 5em;
+    background: #F9F9F9;
+    border-radius: 8px;
+    margin-bottom: 2em;
+}
+
+.page-title{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-top: 2rem;
+}
+
+p {
+    font-weight: 300;
+    line-height: normal;
+}
