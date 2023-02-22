@@ -566,7 +566,7 @@
     {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %}">
+        <a href="#popup1" class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %}">
          {% render 'icon-user' %}
           <span class="visually-hidden">
             {%- liquid
@@ -605,7 +605,13 @@
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 {%- endif -%}
-
+<div id="popup1" class="popup-container">
+  <div class="popup-content">
+    <a href="#" class="close">&times;</a>
+    <h3>Popup 1</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+  </div>
+</div>
 <style>
   .popup-container {
     visibility: hidden;
