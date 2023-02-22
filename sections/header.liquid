@@ -566,7 +566,7 @@
     {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %}">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="overlay header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %}">
          {% render 'icon-user' %}
           <span class="visually-hidden">
             {%- liquid
