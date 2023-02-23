@@ -94,7 +94,7 @@
   }
 
   .card--card {
-    display: grid;
+    display: grid!important;
     grid-template-columns: 40% 1fr!important;
   }
 }
