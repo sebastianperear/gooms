@@ -120,4 +120,8 @@ a.product-about__btn {
   .collapsible {
     align-items: flex-start;
   }
+
+  .collapsible svg {
+    margin-top: -5px;
+  }
 }
