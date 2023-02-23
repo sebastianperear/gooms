@@ -663,7 +663,7 @@
       cursor: pointer;
   }
   
-  .popup-container:target{
+  .popup-container.active{
     visibility: visible;
     opacity: 1;
     transform: scale(1);
@@ -678,7 +678,15 @@
 </style>  
 
 <script>
-
+  $(function () {
+    'use strict'
+  
+    $('.login-icon').on('click', function () {
+      $('body, html').toggleClass('hidden');
+      $('.popup-container').toggleClass('active');
+      
+    })
+  })
 </script>
 
 {% javascript %}
