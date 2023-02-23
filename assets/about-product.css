@@ -110,10 +110,10 @@ a.product-about__btn {
   }
 
   .faqs-list__item span:before {
-    font-size: 14px;
+    font-size: 14px!important;
   }
 
   .faqs-item__title {
-    font-size: 14px;
+    font-size: 14px!important;
   }
 }
