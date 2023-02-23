@@ -101,4 +101,8 @@
   .article {
     display: block;
   }
+
+  .custom-blog-articles__left, .custom-blog-articles__rigth {
+    height: 100%;
+  }
 }
