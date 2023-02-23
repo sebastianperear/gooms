@@ -93,6 +93,7 @@ a.product-about__btn {
 @media (min-width: 0px) and (max-width: 600px) {
   .product-about__grid {
     grid-template-columns: 100%;
+    gap: 0;
   }
 
   .product-about__text {
