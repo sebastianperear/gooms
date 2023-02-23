@@ -566,7 +566,7 @@
     {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %} login-icon">
+        <div class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %} login-icon">
          {% render 'icon-user' %}
           <span class="visually-hidden">
             {%- liquid
@@ -577,7 +577,7 @@
               endif
             -%}
           </span>
-        </a>
+        </div>
       {%- endif -%}
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
