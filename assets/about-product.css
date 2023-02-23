@@ -94,4 +94,8 @@ a.product-about__btn {
   .product-about__grid {
     grid-template-columns: 100%;
   }
+
+  .product-about__text {
+    padding-top: 48px;
+  }
 }
