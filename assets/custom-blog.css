@@ -23,6 +23,9 @@
     -webkit-mask-position: left top;
   }
 
+.custom-blog-articles__left .card__heading {
+  font-size: 40px;
+}
   .custom-blog-articles__article.article {
     padding: 3em 2em;
     background: #F9F9F9;
