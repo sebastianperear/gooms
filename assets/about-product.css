@@ -135,5 +135,12 @@ a.product-about__btn {
     padding-left: 60px;
     padding-right: 60px;
   }
-
 }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .product-about__text {
+    padding-left: 80px;
+  }
+}
+
+
