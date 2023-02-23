@@ -80,7 +80,7 @@
   padding: 0;
 }
 
-@media (min-width: 0px) and (max-width: 600px) {
+@media (min-width: 0px) and (max-width: 768px) {
   .custom-blog {
     padding: 0 0;
   }
