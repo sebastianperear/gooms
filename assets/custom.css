@@ -99,7 +99,6 @@
 /*End popup styles*/
 .hidden-scroll {
   overflow-y: hidden;
-  overflow-x: hidden;
 }
 @media screen and (min-width: 990px) {
   .header--middle-left {
