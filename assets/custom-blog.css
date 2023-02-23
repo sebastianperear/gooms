@@ -30,6 +30,12 @@
 .custom-blog-articles__left .card__heading {
   font-size: 40px;
 }
+
+.custom-blog-articles__right .card--card.card--media>.card__content {
+  padding-left: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
   .custom-blog-articles__article.article {
     padding: 3em 2em;
     background: #F9F9F9;
