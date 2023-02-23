@@ -105,5 +105,6 @@ a.product-about__btn {
 
   .product-about__time {
     padding: 16px;
+    width: 67%;
   }
 }
