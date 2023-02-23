@@ -84,4 +84,12 @@
   .custom-blog {
     padding: 0 0;
   }
+
+  .custom-blog-articles--section {
+    grid-template-columns: 100%;
+  }
+
+  .card__heading {
+    font-size: 16px;
+  }
 }
