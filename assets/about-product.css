@@ -130,4 +130,10 @@ a.product-about__btn {
   .product-about__grid {
     grid-template-columns: 100%;
   }
+
+  .product-about__text {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
 }
