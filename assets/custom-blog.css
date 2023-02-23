@@ -39,6 +39,16 @@
 .article-card__info {
   display: flex;
   flex-direction: column;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.article-card__info .circle-divider:after {
+  display: none;
+}
+
+.article-card__info .circle-divider {
+  font-weight: 600;
 }
 
 .custom-blog-articles__right .card--card.card--media>.card__content {
