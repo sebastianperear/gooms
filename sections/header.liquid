@@ -687,7 +687,11 @@
     $('.login-icon').on('click', function () {
       $('body, html').toggleClass('hidden-scroll');
       $('.popup-container').toggleClass('active');
-      
+    })
+
+    $('.close').on('click', function () {
+      $('.popup-container').toggleClass('active');
+      $('body, html').toggleClass('hidden-scroll');
     })
   })
 </script>
