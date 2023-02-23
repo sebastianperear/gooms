@@ -118,7 +118,7 @@ a.product-about__btn {
   }
 
   .collapsible {
-    align-items: flex-start;
+    align-items: flex-start!important;
   }
 
   .collapsible svg {
