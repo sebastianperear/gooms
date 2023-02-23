@@ -44,3 +44,7 @@
 .card--card {
   background: transparent;
 }
+
+.custom-blog-articles__article.article {
+  padding: 16px;
+}
