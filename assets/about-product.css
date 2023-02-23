@@ -89,3 +89,9 @@ a.product-about__btn {
     color: #fff;
     border-radius: 8px;
 }
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .product-about__grid {
+    grid-template-columns: 100%;
+  }
+}
