@@ -79,6 +79,11 @@
 .card__information {
   padding: 0;
 }
+@media (min-width: 0px) and (max-width: 600px) {
+  .card__heading {
+    font-size: 16px!important;
+  }
+}
 
 @media (min-width: 0px) and (max-width: 768px) {
   .custom-blog {
@@ -89,9 +94,7 @@
     grid-template-columns: 100%;
   }
 
-  .card__heading {
-    font-size: 16px!important;
-  }
+  
 
   .card--card {
     display: grid!important;
