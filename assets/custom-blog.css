@@ -31,6 +31,11 @@
   font-size: 40px;
 }
 
+ .card__heading {
+  font-weight: bold;
+   
+ }
+
 .custom-blog-articles__right .card--card.card--media>.card__content {
   padding-left: 16px;
   padding-top: 0;
