@@ -566,7 +566,7 @@
     {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="#popup1" class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %}">
+        <a href="#popup1" class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %} login-icon">
          {% render 'icon-user' %}
           <span class="visually-hidden">
             {%- liquid
@@ -673,7 +673,17 @@
   }
   /*End popup styles*/
 
-</style>                  
+</style>  
+
+<script>
+  $(function () {
+  'use strict'
+
+  $('').on('click', function () {
+    $('body, html').toggleClass('hidden')
+  })
+})
+</script>
 
 {% javascript %}
   class StickyHeader extends HTMLElement {
