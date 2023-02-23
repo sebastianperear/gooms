@@ -108,4 +108,12 @@ a.product-about__btn {
     width: 67%;
     margin-bottom: 40px;
   }
+
+  .faqs-list__item span:before {
+    font-size: 14px;
+  }
+
+  .faqs-item__title {
+    font-size: 14px;
+  }
 }
