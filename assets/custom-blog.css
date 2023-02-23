@@ -1,3 +1,7 @@
+.custom-blog {
+  padding: 0 10rem;
+}
+
 .custom-blog-articles--section {
     display: grid;
     grid-template-columns: 66.667% 33.334%;
@@ -36,4 +40,3 @@
 .media {
     border-radius: 8px;
 }
-
