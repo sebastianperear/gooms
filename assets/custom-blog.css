@@ -49,6 +49,7 @@
 
 .article-card__info .circle-divider {
   font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .custom-blog-articles__right .card--card.card--media>.card__content {
