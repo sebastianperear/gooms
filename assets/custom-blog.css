@@ -36,6 +36,11 @@
    
  }
 
+.article-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
 .custom-blog-articles__right .card--card.card--media>.card__content {
   padding-left: 16px;
   padding-top: 0;
