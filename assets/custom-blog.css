@@ -40,3 +40,7 @@
 .media {
     border-radius: 8px;
 }
+
+.card--card {
+  background: transparent;
+}
