@@ -1,4 +1,30 @@
+/* Scrollbar */
 
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+.offcanvas-body::-webkit-scrollbar {
+	width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+/* end Scrollbar */
 
 @media screen and (min-width: 990px) {
   .header--middle-left {
