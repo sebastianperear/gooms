@@ -48,3 +48,7 @@
 .custom-blog-articles__article.article {
   padding: 16px;
 }
+
+.card__information {
+  padding: 0;
+}
