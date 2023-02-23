@@ -90,6 +90,6 @@
   }
 
   .card__heading {
-    font-size: 16px;
+    font-size: 16px!important;
   }
 }
