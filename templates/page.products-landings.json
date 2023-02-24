@@ -79,22 +79,12 @@
         "padding_top": 72,
         "padding_bottom": 72
       }
-    },
-    "b8d24ca4-4655-4f22-8828-c88c85a6eb9b": {
-      "type": "video",
-      "settings": {
-        "heading": "Video",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false
-      }
     }
   },
   "order": [
     "page-hero",
     "14ef62c9-81b8-4fd1-b561-12491d0b3c9b",
     "a1447cd0-ea35-47f0-b7fd-e100a933fbff",
-    "7f8856dc-e13f-408d-984c-a904c4bb23a1",
-    "b8d24ca4-4655-4f22-8828-c88c85a6eb9b"
+    "7f8856dc-e13f-408d-984c-a904c4bb23a1"
   ]
 }
