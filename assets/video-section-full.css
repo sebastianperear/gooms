@@ -95,6 +95,8 @@
 
 .box-video .bt-play svg {
   display: block;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* The Play-Triangle */
