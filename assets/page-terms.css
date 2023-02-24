@@ -1,5 +1,4 @@
 .page-width.page-terms {
-  text-align: justify;
   padding: 40px;
   background: #F9F9F9;
   border-radius: 8px;
@@ -30,6 +29,7 @@ p {
 
   .page-width.page-terms {
     padding: 16px;
+    margin: 16px;
   }
   
   p {
