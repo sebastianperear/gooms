@@ -24,6 +24,7 @@ p {
 @media (min-width: 0px) and (max-width: 600px) {
   .page-title {
     margin-top: 16px;
+    margin-bottom: 24px;
     font-size: 24px;
   }
 
