@@ -81,9 +81,9 @@
   left:50%;
   margin:-30px 0 0 -30px;
   display: inline-block;
-  width: 60px;
-  height: 60px;
-  background: rgba(255,255,255,0.1);
+  height: 6.2rem;
+  width: 6.2rem;
+  background: #fff;
   -webkit-backdrop-filter: blur(10px);
   border-radius: 50%;
   text-indent: -999em;
@@ -91,6 +91,10 @@
   z-index:2;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
+}
+
+.box-video .bt-play svg {
+  display: block;
 }
 
 /* The Play-Triangle */
