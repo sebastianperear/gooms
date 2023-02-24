@@ -1,6 +1,7 @@
 {{ 'video-section.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
-
+{% assign handle = page.handle %}
+{% assign product = all_products[handle] %}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -97,6 +98,9 @@
     </deferred-media>
   </div>
 </div>
+
+<video src="{{ product.metafields.custom.video_url }}" >
+</video>
 
 {% schema %}
 {
