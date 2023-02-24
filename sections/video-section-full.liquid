@@ -118,6 +118,62 @@
   </div>
 </div>
 
+<div class="wrap">
+  <div class="box-video">
+    <div class="bg-video" style="background-image: url({{ product.metafields.custom.imagen_de_portada_video}});">
+      <div class="bt-play"></div>
+    </div>
+    <div class="video-container">
+      <iframe width="590" height="332" src="https://www.youtube.com/embed/{{ product.metafields.custom.video_url }}=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Layout for this demo */
+.wrap{
+  position: relative;
+  max-width: 1000px;
+  width: 90%;
+  margin: 100px auto;
+}
+
+ /* The outer-div to move the elements */
+.box-video{
+  position: relative;
+  width: 100%;
+  margin:0 auto 20px auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+ /* Set Cover aka Background-Image */
+.box-video .bg-video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+ /* Add light shade to make play button visible*/
+.bg-video::after{ 
+	content:'';
+	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	background-color: rgba(0,0,0,0.1);
+  	z-index: 3;
+  	}
+
+</style>
+
 {% schema %}
 {
   "name": "Video Section Full",
