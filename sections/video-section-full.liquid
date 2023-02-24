@@ -251,6 +251,15 @@
   $('iframe',this)[0].src += "&amp;autoplay=1";
   $(this).addClass('open');
 });
+
+  $(document).ready(function() {
+  $('#play-video').on('click', function(ev) {
+ 
+    $("#video")[0].src += "&autoplay=1";
+    ev.preventDefault();
+ 
+  });
+});
 </script>
 {% schema %}
 {
