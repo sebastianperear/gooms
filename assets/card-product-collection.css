@@ -8,6 +8,6 @@
   line-height: 24px;
 }
 
-a.card__cta {
+a.card__cta, .full-unstyled-link {
   text-decoration: none!important;
 }
