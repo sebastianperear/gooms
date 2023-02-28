@@ -7,3 +7,7 @@
   font-size: 16px;
   line-height: 24px;
 }
+
+a.card__cta {
+  text-decoration: none!important;
+}
