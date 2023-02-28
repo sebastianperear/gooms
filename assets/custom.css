@@ -950,3 +950,8 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.collection__content .card__content .card__information {
+  font-size: 16px;
+  line-height: 25px;
+}
