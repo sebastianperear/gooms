@@ -148,12 +148,9 @@
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               <strong>{{ card_product.title | escape }}</strong>
+              {{- card_product.metafields.custom.descripci_n_del_hover_de_inicio | escape }}
             </a>
           </h3>
-          <p class="card__heading--content">
-            {{- card_product.metafields.custom.descripci_n_del_hover_de_inicio | escape }}
-          </p>
-
           <a
             class="card__cta"
             style="background:{{ card_product.metafields.custom.color_de_fuente_del_texto_del_hover_de_inicio }}; color:{{ card_product.metafields.custom.background_del_hover }} "
