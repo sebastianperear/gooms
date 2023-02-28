@@ -1,3 +1,7 @@
 .full-unstyled-link {
   display: inline;
 }
+
+.card__heading {
+  margin-bottom: 24px;
+}
