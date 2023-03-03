@@ -1017,3 +1017,8 @@
   background: #201616;
   color: #fff;
 }
+
+.blog-tags__all a:target {
+  background: #201616;
+  color: #fff;
+}
