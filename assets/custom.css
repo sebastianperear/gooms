@@ -1046,13 +1046,6 @@
     max-width: 100%;
   }
 
-  .list-payment {
-    justify-content: flex-start!important;
-  }
-
-  .footer__payment {
-    margin-top: 16px;
-  } 
 
 }
 
