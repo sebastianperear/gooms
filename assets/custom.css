@@ -930,6 +930,8 @@
     padding-left: 20px;
     padding-right: 26px;
   }
+
+  
 }
 
 @media (min-width: 990px) and (max-width: 1024px) {
@@ -1023,6 +1025,10 @@
   color: #fff;
 }
 
+@media (min-width: 601px) and (max-width: 998px) {
+  
+}
+
 @media (min-width: 0px) and (max-width: 600px) {
   .blog-tags a {
     font-size: 10px;
@@ -1030,6 +1036,11 @@
 
   .blog-tags__item {
     padding: 4px 8px;
+  }
+
+  .card-wrapper.underline-links-hover {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .collection .grid__item {
