@@ -67,6 +67,10 @@
   </div>
 {%- endpaginate -%}
 
+$( ".blog-tags__all a" ).click(function() {
+  $( this ).toggleClass( "active" );
+});
+
 {% schema %}
 {
   "name": "custom-blog",
