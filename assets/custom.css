@@ -1026,6 +1026,9 @@
 @media (min-width: 0px) and (max-width: 600px) {
   .blog-tags a {
     font-size: 10px;
+  }
+
+  .blog-tags__item {
     padding: 4px 8px;
   }
 }
