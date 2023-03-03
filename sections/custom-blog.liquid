@@ -19,6 +19,13 @@
 
 {%- paginate blog.articles by 6 -%}
   <div class="custom-blog page-width section-{{ section.id }}-padding">
+    <ul>
+      <li>
+        {%- for tag in blog.all_tags -%}
+          <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+        {%- endfor -%}
+      </li>
+    </ul>
     <div class="custom-blog-articles--section">
       <div class="custom-blog-articles__left">
         {%- for article in blog.articles -%}
