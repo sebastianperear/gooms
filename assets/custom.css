@@ -1046,6 +1046,9 @@
     max-width: 100%;
   }
 
+
+}
+
   .list-payment {
     justify-content: flex-start;
   }
@@ -1053,4 +1056,3 @@
   .footer__payment {
     margin-top: 16px;
   }
-}
