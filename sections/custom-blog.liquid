@@ -21,7 +21,7 @@
   <div class="custom-blog page-width section-{{ section.id }}-padding">
     <ul class="blog-tags__all" >
         {%- for tag in blog.all_tags -%}
-           <li class="nav-ite-">
+           <li class="nav-item">
             <a  href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
            </li>
         {%- endfor -%}
@@ -68,15 +68,16 @@
 {%- endpaginate -%}
 
 <script>
- document.querySelectorAll(".nav-item").forEach((ele) =>
-  ele.addEventListener("click", function (event) {
-    event.preventDefault();
-    document
-      .querySelectorAll(".nav-item")
-      .forEach((ele) => ele.classList.remove("active"));
-    this.classList.add("active")
-  })
-);
+$(function(){
+    var current = location.pathname;
+    $('.nav-item a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.addClass('active');
+        }
+    })
+})
 </script>
 {% schema %}
 {
