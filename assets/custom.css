@@ -1026,7 +1026,10 @@
 }
 
 @media (min-width: 601px) and (max-width: 998px) {
-  
+  .card-wrapper.underline-links-hover {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 @media (min-width: 0px) and (max-width: 600px) {
@@ -1038,10 +1041,7 @@
     padding: 4px 8px;
   }
 
-  .card-wrapper.underline-links-hover {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+
 
   .collection .grid__item {
     width: 100%;
