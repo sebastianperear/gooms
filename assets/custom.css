@@ -1022,3 +1022,9 @@
   background: #201616;
   color: #fff;
 }
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .blog-tags a {
+    font-size: 10px;
+  }
+}
