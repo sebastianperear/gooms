@@ -21,8 +21,8 @@
   <div class="custom-blog page-width section-{{ section.id }}-padding">
     <ul class="blog-tags__all" >
         {%- for tag in blog.all_tags -%}
-           <li>
-            <a class="nav-item" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+           <li class="nav-item">
+            <a  href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
            </li>
         {%- endfor -%}
       </li>
