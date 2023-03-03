@@ -959,4 +959,6 @@
 .blog-tags a {
   font-size: 12px;
   text-decoration: none!important;
+  font-weight: 600;
+  font-family: 'Karla', sans-serif;
 }
