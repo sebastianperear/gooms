@@ -118,6 +118,9 @@
           {%- for tag in blog.all_tags -%}
             <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
           {%- endfor -%}
+          {% for tag in article.tags -%}
+            {{ tag }} ({{ tag.total_count }})
+          {%- endfor %}
           <h3 class="test card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
