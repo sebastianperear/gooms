@@ -1018,7 +1018,7 @@
   color: #fff;
 }
 
-.blog-tags__all a:target {
+.blog-tags__all a.active {
   background: #201616;
   color: #fff;
 }
