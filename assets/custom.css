@@ -972,6 +972,12 @@
   display: flex;
 }
 
+.blog-tags {
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .blog-tags a {
   font-size: 12px;
   line-height: 1;
@@ -979,7 +985,6 @@
   font-weight: 600;
   font-family: 'Karla', sans-serif;
   color: #fff;
-
 }
 
 
