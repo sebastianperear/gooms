@@ -22,7 +22,7 @@
     <ul class="blog-tags__all" >
         {%- for tag in blog.all_tags -%}
            <li>
-            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+            <a class="tag-1" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
            </li>
         {%- endfor -%}
       </li>
@@ -67,7 +67,7 @@
   </div>
 {%- endpaginate -%}
 
-$( ".blog-tags__all a" ).click(function() {
+$( ".tag-1" ).click(function() {
   $( this ).toggleClass( "active" );
 });
 
