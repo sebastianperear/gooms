@@ -956,6 +956,14 @@
   line-height: 25px;
 }
 
+.custom-blog-articles__left .blog-tags {
+  margin-bottom: 24px;
+}
+
+.custom-blog-articles__right .blog-tags {
+  margin-bottom: 10px;
+}
+
 .blog-tags__item {
   background: #000;
   padding: 6px 8px;
