@@ -22,7 +22,7 @@
     <ul class="blog-tags__all" >
         {%- for tag in blog.all_tags -%}
            <li>
-            <a class="tag-1" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+            <a class="nav-link" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
            </li>
         {%- endfor -%}
       </li>
@@ -67,6 +67,21 @@
   </div>
 {%- endpaginate -%}
 
+<script>
+  const links = document.querySelectorAll('.nav-link');
+    
+if (links.length) {
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      links.forEach((link) => {
+          link.classList.remove('active');
+      });
+      e.preventDefault();
+      link.classList.add('active');
+    });
+  });
+}
+</script>
 {% schema %}
 {
   "name": "custom-blog",
