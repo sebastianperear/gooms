@@ -140,3 +140,15 @@
     }
   }
 }
+
+span.article--tag {
+  background: #201616;
+  color: white;
+  border-radius: 18px;
+  padding: 5px 8px;
+  margin: 10px 0px;
+}
+
+.article__head{
+  margin-top: 0.5em !important;
+}

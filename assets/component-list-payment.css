@@ -20,14 +20,3 @@
   display: flex;
   padding: 0.5rem;
 }
-@media (min-width: 0px) and (max-width: 600px) {
-
-
-  .list-payment {
-    justify-content: flex-start!important;
-  }
-
-  .footer__payment {
-    margin-top: 16px;
-  } 
-}

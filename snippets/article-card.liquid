@@ -75,7 +75,6 @@
         {%- endif -%}
         <div class="card__content">
           <div class="card__information">
-
             <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
               <a href="{{ article.url }}" class="full-unstyled-link">
                 {{ article.title | truncate: 50 | escape }}
@@ -115,13 +114,11 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          <div class="blog-tags" >
-            {% for tag in article.tags -%}
-              <div class="blog-tags__item" ><a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a></div>
-            {%- endfor %}
-          </div>
-          
-          <h3 class="test card__heading{% if show_excerpt %} h2{% endif %}">
+          {% for tag in article.tags -%}
+            <span class="article--tag">{{ tag }} </span>
+          {%- endfor -%}
+
+          <h3 class="card__heading article__head{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
             </a>
@@ -159,5 +156,4 @@
       </div>
     </div>
   </div>
-  
 {%- endif -%}

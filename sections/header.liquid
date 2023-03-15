@@ -565,7 +565,7 @@
       </details-modal>
     {% endcomment %}
 
-      {%- if shop.customer_accounts_enabled -%}
+      {% comment %}  Modal 1{%- if shop.customer_accounts_enabled -%}
         <div class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} {% endif %} login-icon">
          {% render 'icon-user' %}
           <span class="visually-hidden">
@@ -578,7 +578,22 @@
             -%}
           </span>
         </div>
+      {%- endif -%} {% endcomment %}
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--user link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+          {% render 'icon-user' %}
+          <span class="visually-hidden">
+            {%- liquid
+              if customer
+                echo 'customer.account_fallback' | t
+              else
+                echo 'customer.log_in' | t
+              endif
+            -%}
+          </span>
+        </a>
       {%- endif -%}
+
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- liquid
           if cart == empty
@@ -605,7 +620,7 @@
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 {%- endif -%}
-<div id="popup1" class="popup-container">
+{% comment %} <div id="popup1" class="popup-container">
   <div class="popup-content">
     <div class="close">&times;</div>
   </div>
@@ -625,7 +640,7 @@
       $('body').toggleClass('hidden-scroll');
     })
   })
-</script>
+</script> {% endcomment %}
 
 {% javascript %}
   class StickyHeader extends HTMLElement {
