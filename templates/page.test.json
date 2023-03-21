@@ -10,9 +10,14 @@
         "title": "¡Cuéntanos cómo te cuidas!",
         "subtitle": "¡Esto nos ayudará a recomendarte las gooms perfectas para ti!"
       }
+    },
+    "image": {
+      "type": "image"
+      
     }
   },
   "order": [
-    "banner"
+    "banner",
+    "image"
   ]
 }
