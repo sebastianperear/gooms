@@ -12,12 +12,19 @@
       }
     },
     "image": {
-      "type": "image"
-      
+      "type": "image",
+      "settings": {
+      }
+    },
+    "test": {
+      "type": "test_step_1",
+      "settings": {
+      }
     }
   },
   "order": [
     "banner",
-    "image"
+    "image",
+    "test"
   ]
 }

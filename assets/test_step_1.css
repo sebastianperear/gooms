@@ -1,0 +1,87 @@
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5em;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 33.3%;
+    padding: 0.5em;
+  }
+.column-item{
+    background-color: #F6F6F6;
+    padding: 3em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.progress_bar{
+    width: 99%;
+    height: 16px;
+    border-radius: 50px;
+    margin-top: 1em;
+}
+
+::-webkit-progress-bar {
+    background-color: #F6F6F6;
+    border-radius: 50px;
+
+  }
+
+  ::-webkit-progress-value {
+    background-color: #FC2695;
+    border-radius: 50px;
+
+
+  }
+
+
+
+  .button_step1-icon path {
+    fill: #000000;
+}
+
+a.button_step1 {
+  background-color: #F6F6F6;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.column-item:hover{
+  background-color: #EEE743;
+  
+}
+a.column-link {
+  text-decoration: none;
+  color: black;
+}
+
+a.button_step1:hover{
+  background-color: #FC2695;
+  fill: #ffffff;
+
+}
+
+.button_step1-icon path {
+  fill: #000000;
+}
+
+.button_step1:hover > .button_step1-icon path {
+  fill: #ffffff;
+}
+  
+
+  

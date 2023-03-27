@@ -1,0 +1,180 @@
+{{ 'test_step_1.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient"
+  id="{% if section.settings.id %} {{section.settings.id}}{% endif %}"
+>
+  <div class="collection-hero__inner page-width">
+    <div class="collection-hero__text-wrapper">
+      <div class="collection-hero__image">
+        <img
+          srcset="
+            {%- if section.settings.image_title.width >= 165 -%}{{ section.settings.image_title | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if section.settings.image_title.width >= 360 -%}{{ section.settings.image_title | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if section.settings.image_title.width >= 535 -%}{{ section.settings.image_title | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if section.settings.image_title.width >= 750 -%}{{ section.settings.image_title | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if section.settings.image_title.width >= 1070 -%}{{ section.settings.image_title | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if section.settings.image_title.width >= 1500 -%}{{ section.settings.image_title | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ section.settings.image_title | image_url }} {{ section.settings.image_title.width }}w
+          "
+          src="{{ section.settings.image_title | image_url: width: 750 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+          alt=""
+          width="{{ section.settings.image_title.width }}"
+          height="{{ section.settings.image_title.height }}"
+        >
+      </div>
+      <h1 class="collection-hero__title">
+        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+        {% comment %} {{- collection.title | escape -}} {% endcomment %}
+        {{ section.settings.title | escape }}
+      </h1>
+      <p class="collection-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
+      {%- if section.settings.show_collection_description -%}
+        <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="test_step_1 page-width">
+    <div class="row">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'opcion' %}
+            <div class="column">
+              <a href="#" class="column-link">
+                <div class="column-item">Some Text in Column One</div>
+              </a>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    <div class="row">
+      <progress value="{{ section.settings.range }}" max="50" class="progress_bar"></progress>
+    </div>
+    <div class="row">
+      <a href="" class="button_step1">
+        <i class="button_step1-icon">{% render 'icon-arrowl' %}</i></a
+      >
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Test",
+  "tag": "section",
+  "class": "test",
+
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Id"
+    },
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Id de sección"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "header",
+      "content": "Titulo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_title",
+      "label": "Imagen de titulo"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titulo de lista de productos.",
+      "default": "Uhmmm... tasting well "
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitulo de lista de productos.",
+      "default": "Conoce todo lo que tenemos para ti."
+    },
+    {
+      "type": "header",
+      "content": "Barra de progreso"
+    },
+    {
+      "type": "header",
+      "content": "Barra de progreso"
+    },
+    {
+      "type": "range",
+      "id": "range",
+      "label": "Porcentaje",
+      "min": 0,
+      "max": 50,
+      "default": 0,
+      "unit": "%"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "opcion",
+      "type": "opcion",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto, opción"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["*"],
+    "groups": ["footer"]
+  }
+}
+{% endschema %}
