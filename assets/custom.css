@@ -955,3 +955,7 @@
   font-size: 16px;
   line-height: 25px;
 }
+
+.test_step_1, .test_step_2, .test_step_3 {
+display: none;
+}
