@@ -46,11 +46,11 @@
 
 
 
-  .button_step1-icon path {
+  .question_button-icon path {
     fill: #000000;
 }
 
-a.button_step1 {
+a.question_button {
   background-color: #F6F6F6;
   border-radius: 50%;
   width: 50px;
@@ -69,17 +69,17 @@ a.column-link {
   color: black;
 }
 
-a.button_step1:hover{
+a.question_button:hover{
   background-color: #FC2695;
   fill: #ffffff;
 
 }
 
-.button_step1-icon path {
+.question_button-icon path {
   fill: #000000;
 }
 
-.button_step1:hover > .button_step1-icon path {
+.question_button:hover > .question_button-icon path {
   fill: #ffffff;
 }
   

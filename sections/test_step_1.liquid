@@ -44,7 +44,6 @@
               <a
                 href="#"
                 class="column-link"
-                onclick="btnClick()"
               >
                 <div class="column-item">{{ block.settings.text }}</div>
               </a>
@@ -56,8 +55,8 @@
       <progress value="{{ section.settings.range }}" max="50" class="progress_bar"></progress>
     </div>
     <div class="row">
-      <a href="" class="button_step1">
-        <i class="button_step1-icon">{% render 'icon-arrowl' %}</i></a
+      <a href="" class="question_button button_{% if section.settings.id %}{{section.settings.id}}{% endif %}">
+        <i class="question_button-icon">{% render 'icon-arrowl' %}</i></a
       >
     </div>
   </div>
