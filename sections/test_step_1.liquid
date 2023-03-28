@@ -1,4 +1,5 @@
 {{ 'test_step_1.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'test_step.js' | asset_url }}" defer></script>
 
 <div
   class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient"
@@ -41,7 +42,14 @@
         {% case block.type %}
           {% when 'opcion' %}
             <div class="column">
-              <a href="#" class="column-link">
+              <a
+                href="#"
+                class="column-link"
+                onclick="btnClick()"
+                {% if section.settings.id %}
+                  id="btn_{{section.settings.id}}"
+                {% endif %}
+              >
                 <div class="column-item">{{ block.settings.text }}</div>
               </a>
             </div>
