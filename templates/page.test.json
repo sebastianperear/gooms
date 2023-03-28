@@ -140,6 +140,7 @@
   "order": [
     "banner",
     "image",
-    "test"
+    "test",
+    "test_step_2"
   ]
 }

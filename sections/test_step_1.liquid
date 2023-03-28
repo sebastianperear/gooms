@@ -2,7 +2,9 @@
 
 <div
   class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient"
-  id="{% if section.settings.id %} {{section.settings.id}}{% endif %}"
+  {% if section.settings.id %}
+    id=" {{section.settings.id}}"
+  {% endif %}
 >
   <div class="collection-hero__inner page-width">
     <div class="collection-hero__text-wrapper">
@@ -30,9 +32,6 @@
         {{ section.settings.title | escape }}
       </h1>
       <p class="collection-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
     </div>
   </div>
 
@@ -43,7 +42,7 @@
           {% when 'opcion' %}
             <div class="column">
               <a href="#" class="column-link">
-                <div class="column-item">Some Text in Column One</div>
+                <div class="column-item">{{ block.settings.text }}</div>
               </a>
             </div>
         {% endcase %}
@@ -78,12 +77,6 @@
     {
       "type": "paragraph",
       "content": "t:sections.main-collection-banner.settings.paragraph.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_collection_description",
-      "default": true,
-      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
     },
     {
       "type": "checkbox",
