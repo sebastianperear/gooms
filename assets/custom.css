@@ -956,6 +956,6 @@
   line-height: 25px;
 }
 
-.test_step_1, .test_step_2, .test_step_3 {
+#step_1, #step_2, #step_3 {
 display: none;
 }
