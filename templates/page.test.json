@@ -24,7 +24,7 @@
         "8cd99ed4-5902-4bc0-af47-39bf1b9ff361": {
           "type": "opcion",
           "settings": {
-            "text": ""
+            "text": "¡Esto nos ayudará a recomendarte las gooms perfectas para ti!"
           }
         },
         "de4b905f-c521-43c5-909f-40bb46ddde32": {
@@ -68,12 +68,11 @@
       ],
       "settings": {
         "id": "step_1",
-        "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "background-1",
         "image_title": "shopify:\/\/shop_images\/Group_154_743f614f-7b0d-4171-a5c9-22cd1436eaf2.png",
         "title": "¿Qué problemas tienes en el día a día?",
-        "subtitle": "Seleccione una respuesta",
+        "subtitle": "¡Esto nos ayudará a recomendarte las gooms perfectas para ti!",
         "range": 0
       }
     },
