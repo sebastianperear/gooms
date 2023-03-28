@@ -130,9 +130,9 @@
         "show_collection_image": false,
         "color_scheme": "background-1",
         "image_title": "shopify:\/\/shop_images\/Group_154_743f614f-7b0d-4171-a5c9-22cd1436eaf2.png",
-        "title": "¿Qué problemas tienes en el día a día?",
+        "title": "¿Qué te gustaría mejorar?",
         "subtitle": "Seleccione una respuesta",
-        "range": 0
+        "range": 16
       }
     },
     "test_step_3": {
