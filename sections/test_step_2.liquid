@@ -56,7 +56,7 @@
       <progress value="{{ section.settings.range }}" max="50" class="progress_bar"></progress>
     </div>
     <div class="row">
-      <a href="" class="question_button">
+      <a href="" class="question_button {% if section.settings.id %}button_{{section.settings.id}}{% endif %}">
         <i class="question_button-icon">{% render 'icon-arrowl' %}</i></a
       >
     </div>
