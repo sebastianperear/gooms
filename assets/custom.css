@@ -871,14 +871,14 @@ header.header.header--middle-left.header--has-menu {
   }
 
   .card-wrapper.underline-links-hover {
-      padding-right: 15% !important;
-      padding-left: 15% !important;
+      padding-right: 12% !important;
+      padding-left: 12% !important;
   }
 
   .card__heading {
-    margin-bottom: 2rem;
-    font-size: 15px;
-    line-height: 18px;
+    margin-bottom: 2rem !important;
+    font-size: 15px !important;
+    line-height: 15px !important;
 }
 
 }
