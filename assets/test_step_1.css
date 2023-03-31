@@ -82,6 +82,9 @@ a.question_button:hover{
 .question_button:hover > .question_button-icon path {
   fill: #ffffff;
 }
-  
+
+.selected{
+  background-color: #EEE743;
+}
 
   

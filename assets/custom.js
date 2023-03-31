@@ -24,11 +24,15 @@ const step_0_btn = document.querySelector(".button_image-text");
 step_0_btn.addEventListener("click",step_0);
 
 // Add selected class
-const column_link = document.querySelector(".column-link");
-column_link.addEventListener('click', function (event) {
-  console.log("s")
-column_link.classList.add("selected")
-	// Don't follow the link
-	event.preventDefault();
+// Get references to the button and the div
+const collink = document.querySelectorAll(".column-link");
+const colitem = document.querySelectorAll(".column-item");
 
-}, false);
+
+// Add a click event listener to the button
+for (let i = 0; i < collink.length; i++) {
+  collink[i].addEventListener("click", function(event) {
+    colitem[i].classList.toggle("selected");
+    event.preventDefault();
+  });
+}
