@@ -28,7 +28,6 @@ const column_link = document.querySelector(".column-link");
 column_link.addEventListener('click', function (event) {
   console.log("s")
 column_link.classList.add("selected")
-
 	// Don't follow the link
 	event.preventDefault();
 
