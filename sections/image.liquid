@@ -1,5 +1,5 @@
 {{ 'image_test.css' | asset_url | stylesheet_tag }}
-<div class="page__test-image-container">
+<div class="page__test-image-container" id="step0">
   <img
     srcset="
       {%- if section.settings.section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -17,7 +17,7 @@
     height="{{ section.settings.image.height }}"
   >
 </div>
-<div class="button_image_container">
+<div class="button_image_container" id="step0_btn">
   <a href="" class="button_image-text">
     {{- section.settings.image_text_button }}
     <i class="button_image-icon">{% render 'icon-arrowl' %}</i></a

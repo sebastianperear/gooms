@@ -11,7 +11,12 @@
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width">
-    <div class="collection-hero__text-wrapper">
+    <div
+      class="collection-hero__text-wrapper"
+      {% if template == 'page.test' %}
+        id="step0_title"
+      {% endif %}
+    >
       <div class="collection-hero__image">
         <img
           srcset="
