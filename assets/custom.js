@@ -28,6 +28,14 @@ function step_1(event) {
     event.preventDefault()
   }
 
+  function step_3(event) {
+    const step_3_section = document.querySelector("#step_3");
+    const step_4 = document.querySelector("#step_4");
+    step_3_section.style.display = "none";
+    step_4.style.display = "block"; 
+    event.preventDefault()
+  }
+
   // Step 0 
 const step_0_btn = document.querySelector(".button_image-text");
 step_0_btn.addEventListener("click",step_0);
@@ -39,6 +47,9 @@ step_1_btn.addEventListener("click",step_1);
 // Step 2
 const step_2_btn = document.querySelector(".button_step_2");
 step_2_btn.addEventListener("click",step_2);
+// Step 3
+const step_3_btn = document.querySelector(".button_step_3");
+step_3_btn.addEventListener("click",step_3);
 
 // Add selected class
 // Get references to the button and the div

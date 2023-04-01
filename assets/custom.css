@@ -972,6 +972,28 @@ header.header.header--middle-left.header--has-menu {
   line-height: 25px;
 }
 
-#step_1, #step_2, #step_3 {
+#step_1, #step_2, #step_3, #step_4 {
 display: none;
+}
+
+a.question_button_step4.button_step_4 {
+  background: #FC2695;
+  padding: .7rem;
+  border-radius: 3rem;
+  color: white;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+}
+
+span.step_4_button--text {
+  margin-right: 0.5rem;
+  margin-left: 0.6rem;
+}
+
+.question_button-icon.icon-step-4 svg {
+  transform: scale(0.70);
+}
+.question_button-icon.icon-step-4 svg path {
+  fill: #ffff;
 }

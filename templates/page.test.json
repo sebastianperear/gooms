@@ -193,6 +193,65 @@
         "subtitle": "Seleccione una respuesta",
         "range": 50
       }
+    },
+    "test_step_4": {
+      "type": "test_step_4",
+      "blocks": {
+        "8cd99ed4-5902-4bc0-af47-39bf1b9ff361": {
+          "type": "opcion",
+          "settings": {
+            "text": "Falta de sueño 😴"
+          }
+        },
+        "de4b905f-c521-43c5-909f-40bb46ddde32": {
+          "type": "opcion",
+          "settings": {
+            "text": "Falta de energía 😮‍💨"
+          }
+        },
+        "32062f1f-5f9a-415b-a552-51d3b397c168": {
+          "type": "opcion",
+          "settings": {
+            "text": "Me siento feo 👽"
+          }
+        },
+        "23d73498-adbd-49c5-9416-3f43b9dfc0a1": {
+          "type": "opcion",
+          "settings": {
+            "text": "Todo me cae mal 🤢"
+          }
+        },
+        "94c03346-d397-48af-9185-6b581221bd80": {
+          "type": "opcion",
+          "settings": {
+            "text": "Cansancio mental 😶"
+          }
+        },
+        "ff609200-de2c-407f-a3ab-9b588cbff9d3": {
+          "type": "opcion",
+          "settings": {
+            "text": "Que estrés todo 🤯"
+          }
+        }
+      },
+      "block_order": [
+        "8cd99ed4-5902-4bc0-af47-39bf1b9ff361",
+        "de4b905f-c521-43c5-909f-40bb46ddde32",
+        "32062f1f-5f9a-415b-a552-51d3b397c168",
+        "23d73498-adbd-49c5-9416-3f43b9dfc0a1",
+        "94c03346-d397-48af-9185-6b581221bd80",
+        "ff609200-de2c-407f-a3ab-9b588cbff9d3"
+      ],
+      "settings": {
+        "id": "step_4",
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1",
+        "image_title": "shopify:\/\/shop_images\/Group_154_743f614f-7b0d-4171-a5c9-22cd1436eaf2.png",
+        "title": "¿Algo más para mejorar?",
+        "subtitle": "Seleccione una respuesta",
+        "range": 50
+      }
     }
   },
   "order": [
@@ -200,6 +259,8 @@
     "image",
     "test",
     "test_step_2",
-    "test_step_3"
+    "test_step_3",
+    "test_step_4"
+
   ]
 }
