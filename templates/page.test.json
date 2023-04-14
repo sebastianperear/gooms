@@ -252,6 +252,9 @@
         "subtitle": "Seleccione una respuesta",
         "range": 50
       }
+    },
+    "test_step_5": {
+      "type": "test_step_5"
     }
   },
   "order": [
@@ -260,7 +263,8 @@
     "test",
     "test_step_2",
     "test_step_3",
-    "test_step_4"
+    "test_step_4",
+    "test_step_5"
 
   ]
 }

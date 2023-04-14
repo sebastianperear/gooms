@@ -1,0 +1,56 @@
+.responses{
+    margin: 3rem 0;
+}
+
+.gray-background{
+    background: #F6F6F6;
+    border-radius: 8px;
+}
+
+h3.column-title {
+    margin: 0.5rem 0;
+    color: #B1D600;
+    font-size: 4rem;
+    font-weight: 700;
+
+}
+
+p.column-p {
+    margin: 0.5rem 0;
+}
+
+.items__block {
+    display: flex;
+}
+
+.column-price{
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #201616;
+
+}
+
+.column-description{
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    font-weight: 300;
+    color: #201616;
+
+}
+
+button.column-btn {
+    width: 60%;
+    margin: 2rem 0;
+    background: #B1D600;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+}
+
+.px-5{
+    padding: 2rem 0;
+}
