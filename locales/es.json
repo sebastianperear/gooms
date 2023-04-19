@@ -443,5 +443,10 @@
         "address_company_contains_emojis": "La identificación no puede contener emojis"
       }
     }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "company": "Número de identificación"
+    }
   }
 }
