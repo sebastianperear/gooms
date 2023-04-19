@@ -103,6 +103,13 @@
     "cart_type": "notification",
     "show_vendor": false,
     "show_cart_note": false,
+    "checkout_logo_image": "shopify:\/\/shop_images\/g118_d312c583-3f5b-470e-bbf8-b379043ec924.png",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_heading_font": "Abel",
+    "checkout_accent_color": "#ff5c38",
+    "checkout_button_color": "#ff5c38",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
