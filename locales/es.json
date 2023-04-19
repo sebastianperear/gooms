@@ -430,5 +430,18 @@
       "copy_code_success": "El código se copió correctamente",
       "print_gift_card": "Imprimir"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "company_label": "Identificación",
+        "optional_company_label": "Identificación (Opcional)"
+      },
+      "field_errors": {
+        "address_company_blank": "Introduce número de Identificación",
+        "address_company_contains_html_tags": "La identificación no puede contener html.",
+        "address_company_contains_emojis": "La identificación no puede contener emojis"
+      }
+    }
   }
 }
