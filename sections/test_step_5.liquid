@@ -1,6 +1,6 @@
 {{ 'test_step_5.css' | asset_url | stylesheet_tag }}
 <div
-  class="collection-hero responses"
+  class="collection-hero responses opacity"
   {% if section.settings.id %}
     id="{{section.settings.id}}"
   {% endif %}
@@ -33,38 +33,70 @@
       <p class="collection-hero__subtitle">{{ section.settings.subtitle | escape }}</p>
     </div>
   </div>
-
+  
   <div class="test_step_5 page-width">
-    <div class="row gray-background px-5">
-        <div class="items__block">
-        <div class='column'>
-            <div class="collection-hero__image">
-                <img
-                  srcset="
-                    {%- if section.settings.image_title.width >= 165 -%}{{ section.settings.image_title | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if section.settings.image_title.width >= 360 -%}{{ section.settings.image_title | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if section.settings.image_title.width >= 535 -%}{{ section.settings.image_title | image_url: width: 535 }} 535w,{%- endif -%}
-                    {%- if section.settings.image_title.width >= 750 -%}{{ section.settings.image_title | image_url: width: 750 }} 750w,{%- endif -%}
-                    {%- if section.settings.image_title.width >= 1070 -%}{{ section.settings.image_title | image_url: width: 1070 }} 1070w,{%- endif -%}
-                    {%- if section.settings.image_title.width >= 1500 -%}{{ section.settings.image_title | image_url: width: 1500 }} 1500w,{%- endif -%}
-                    {{ section.settings.image_title | image_url }} {{ section.settings.image_title.width }}w
-                  "
-                  src="{{ section.settings.image_title | image_url: width: 850 }}"
-                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
-                  alt=""
-                  width="{{ section.settings.image_title.width }}"
-                  height="{{ section.settings.image_title.height }}"
-                >
-              </div>
-      </div>
-      <div class='column'>
-        <h3 class="column-title">Mental Ease</h3>
-    <p class="column-p column-price">$36.500</p>
-    <p class="column-p column-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</p>
-    <button class="column-btn">Agregar al Carrito</button></div>
-  </div>
+    {% for product in collections.all.products %}
+      {%- form 'product',
+        product,
+        data-productid: product.id,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+    <div class="row gray-background px-5 mx-5 slide-left-{{ forloop.index }}">
+        <a href="{{ product.url }}" class="product-link">
+          <div class="items__block">
+          <div class='column'>
+              <div class="collection-hero__image">
+                  <img
+                    srcset="
+                      {%- if product.featured_image.src.width >= 165 -%}{{ product.featured_image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if product.featured_image.src.width >= 360 -%}{{ product.featured_image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if product.featured_image.src.width >= 535 -%}{{ product.featured_image.src | image_url: width: 535 }} 535w,{%- endif -%}
+                      {%- if product.featured_image.src.width >= 750 -%}{{ product.featured_image.src| image_url: width: 750 }} 750w,{%- endif -%}
+                      {%- if product.featured_image.src.width >= 1070 -%}{{ product.featured_image.src | image_url: width: 1070 }} 1070w,{%- endif -%}
+                      {%- if product.featured_image.src.width >= 1500 -%}{{ product.featured_image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ product.featured_image.src| image_url }} {{ product.featured_image.src.width }}w
+                    "
+                    src="{{ product.featured_image.src | image_url: width: 850 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+                    alt=""
+                    width="{{ product.featured_image.src.width }}"
+                    height="{{ product.featured_image.src.height }}"
+                  >
+                </div>
+        </div>
+        <div class='column justify-center'>
+          <h3 class="column-title" style="color:{{ product.metafields.custom.color_primario }}">{{ product.title }}</h3>
+      <p class="column-p column-price">{{ product.price | money }}</p>
+      <p class="column-p column-description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</p>
+      <input
+        type="hidden"
+        name="id"
+        data-productid="{{ product.id }}"
+        value="{{ product.selected_or_first_available_variant.id }}"
+        disabled
+      >
+
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" hidden/>
+      <select name="id" hidden>
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}"
+            {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+          >
+            {{ variant.title }} - {{ variant.price | money }}
+          </option>
+        {% endfor %}
+      </select>
+      <button type="submit" name="add" class="column-btn" style="background-color:{{ product.metafields.custom.color_primario }}">Agregar al Carrito</button></div>
+    </div>
+  </a>
 </div>
+{%- endform -%}
+{% endfor %}
 </div>
+
 {% schema %}
 {
   "name": "test_step_5",

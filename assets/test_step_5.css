@@ -49,8 +49,21 @@ button.column-btn {
     font-size: 1.8rem;
     line-height: 1.8rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .px-5{
     padding: 2rem 0;
+}
+
+a.product-link {
+    text-decoration: none;
+}
+
+.mx-5{
+    margin: 2rem 0;
+}
+
+.column.justify-center {
+    justify-content: center;
 }

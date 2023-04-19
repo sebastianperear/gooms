@@ -1,7 +1,7 @@
 {{ 'test_step_1.css' | asset_url | stylesheet_tag }}
 
 <div
-  class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient"
+  class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient opacity"
   {% if section.settings.id %}
     id="{{section.settings.id}}"
   {% endif %}
