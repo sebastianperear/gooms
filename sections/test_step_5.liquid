@@ -44,9 +44,9 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
-    <div class="row gray-background px-5 mx-5 slide-left-{{ forloop.index }}">
+    <div class="row gray-background px-5 mx-5 slide-left-{{ forloop.index }}" data-product="{{ product.handle }}">
         <a href="{{ product.url }}" class="product-link">
-          <div class="items__block">
+          <div class="items__block column__step5">
           <div class='column'>
               <div class="collection-hero__image">
                   <img

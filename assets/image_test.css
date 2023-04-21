@@ -27,3 +27,10 @@ i.button_image-icon {
     padding: 18px;
     border-radius: 80%;
 }
+
+@media (max-width: 767px) {
+    i.button_image-icon {
+        padding: 9px 10px;
+        border-radius: 70%;
+    }
+}
