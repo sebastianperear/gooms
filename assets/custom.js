@@ -25,6 +25,14 @@ function step_1(event) {
     
     step_1_section.style.display = "none";
     step_2.style.display = "block"; 
+
+    const productName1 = localStorage.getItem('product1');
+    if (productName1) {
+      const elementsToHide = document.querySelectorAll(`[data-product="${productName1}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
+      elementsToHide.forEach(function(element) {
+        element.style.display = "block"; // Ocultar los elementos seleccionados
+      });
+    }
     event.preventDefault()
   }
 
@@ -33,6 +41,13 @@ function step_1(event) {
     const step_3 = document.querySelector("#step_3");
     step_2_section.style.display = "none";
     step_3.style.display = "block"; 
+    const productName2 = localStorage.getItem('product2');
+    if (productName2) {
+      const elementsToHide = document.querySelectorAll(`[data-product="${productName2}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
+      elementsToHide.forEach(function(element) {
+        element.style.display = "block"; // Ocultar los elementos seleccionados
+      });
+    }
     event.preventDefault()
   }
 
@@ -42,6 +57,13 @@ function step_1(event) {
     const step_4 = document.querySelector("#step_4");
     step_3_section.style.display = "none";
     step_4.style.display = "block"; 
+    const productName3 = localStorage.getItem('product3');
+    if (productName3) {
+      const elementsToHide = document.querySelectorAll(`[data-product="${productName3}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
+      elementsToHide.forEach(function(element) {
+        element.style.display = "block"; // Ocultar los elementos seleccionados
+      });
+    }
     event.preventDefault()
   }
 
@@ -50,6 +72,13 @@ function step_1(event) {
     const step_5 = document.querySelector("#step_5");
     step_4_section.style.display = "none";
     step_5.style.display = "block"; 
+    const productName4 = localStorage.getItem('product4');
+    if (productName4) {
+      const elementsToHide = document.querySelectorAll(`[data-product="${productName4}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
+      elementsToHide.forEach(function(element) {
+        element.style.display = "block"; // Ocultar los elementos seleccionados
+      });
+    }
     event.preventDefault()
   }
 
@@ -115,35 +144,12 @@ botones.forEach((boton) => {
   });
 });
 
-const productName1 = localStorage.getItem('product1');
-const productName2 = localStorage.getItem('product2');
-const productName3 = localStorage.getItem('product3');
-const productName4 = localStorage.getItem('product4');
-if (productName1) {
-  const elementsToHide = document.querySelectorAll(`[data-product="${productName1}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
-  elementsToHide.forEach(function(element) {
-    element.style.display = "block"; // Ocultar los elementos seleccionados
-  });
-}
 
-if (productName2) {
-  const elementsToHide = document.querySelectorAll(`[data-product="${productName2}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
-  elementsToHide.forEach(function(element) {
-    element.style.display = "block"; // Ocultar los elementos seleccionados
-  });
-}
 
-if (productName3) {
-  const elementsToHide = document.querySelectorAll(`[data-product="${productName3}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
-  elementsToHide.forEach(function(element) {
-    element.style.display = "block"; // Ocultar los elementos seleccionados
-  });
-}
 
-if (productName4) {
-  const elementsToHide = document.querySelectorAll(`[data-product="${productName4}"]`); // Seleccionar los elementos HTML con el atributo data-text que coincide con el nombre del producto
-  elementsToHide.forEach(function(element) {
-    element.style.display = "block"; // Ocultar los elementos seleccionados
-  });
-}
+
+
+
+
+
 
