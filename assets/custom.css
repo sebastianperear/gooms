@@ -868,7 +868,7 @@ header.header.header--middle-left.header--has-menu {
 
 }
 
-@media (min-width: 0px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .footer-block-image {
     width: 100% !important;
   }
@@ -1081,4 +1081,8 @@ span.step_4_button--text {
   100% {
     transform: translateX(0px)
   }
+}
+
+.row.gray-background.px-5.mx-5 {
+  display: none;
 }

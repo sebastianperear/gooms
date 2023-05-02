@@ -46,7 +46,9 @@
                 href="#"
                 class="column-link"
               >
-                <div class="column-item">{{ block.settings.text }}</div>
+                <div class="column-item" data-product3="{{ block.settings.product.handle }}">
+                  {{ block.settings.text }}
+                </div>
               </a>
             </div>
         {% endcase %}
@@ -171,6 +173,11 @@
           "type": "text",
           "id": "text",
           "label": "Texto, opción"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Producto"
         }
       ]
     }

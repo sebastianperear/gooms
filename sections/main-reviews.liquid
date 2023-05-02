@@ -3,72 +3,32 @@
     <h2 class="main-reviews__title">Gooms Reviews</h2>
 
     <div class="main-reviews__grid">
-      <div class="main-reviews__item">
-        <div class="main-reviews__header">
-          <div class="main-reviews__avatar"></div>
-          <div>
-            <h2 class="main-reviews__name">Sebastian Canal</h2>
-            <p class="main-reviews__position">Nutricionista</p>
-            <div class="main-reviews__stars">
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'slide' %}
+            <div class="main-reviews__item">
+              <div class="main-reviews__header">
+                <div class="main-reviews__avatar"></div>
+                <div>
+                  <h2 class="main-reviews__name">{{ block.settings.name }}</h2>
+                  <p class="main-reviews__position">{{ block.settings.subname }}</p>
+                  <div class="main-reviews__stars">
+                    {% render 'icon-star' %}
+                    {% render 'icon-star' %}
+                    {% render 'icon-star' %}
+                    {% render 'icon-star' %}
+                    {% render 'icon-star' %}
+                  </div>
+                </div>
+              </div>
+              <div class="main-reviews__text">
+                <p>
+                  {{ block.settings.text }}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="main-reviews__text">
-          <p>
-            Nutricionista recomienda gooms porque son super deliciosas y super saludables, me gusta la de kiwi miel y
-            limon, que pone super hermoso tu pelo
-          </p>
-        </div>
-      </div>
-      <div class="main-reviews__item">
-        <div class="main-reviews__header">
-          <div class="main-reviews__avatar"></div>
-          <div>
-            <h2 class="main-reviews__name">Alejandro Gomez</h2>
-            <p class="main-reviews__position">Deportista</p>
-            <div class="main-reviews__stars">
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-            </div>
-          </div>
-        </div>
-        <div class="main-reviews__text">
-          <p>
-            Gooms es excelente ya que disminuye el cansancio mental, físico y mejora el rendimiento de cada persona.
-          </p>
-        </div>
-      </div>
-
-      <div class="main-reviews__item">
-        <div class="main-reviews__header">
-          <div class="main-reviews__avatar"></div>
-          <div>
-            <h2 class="main-reviews__name">Natalia Perales</h2>
-            <div class="main-reviews__stars">
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-              {% render 'icon-star' %}
-            </div>
-          </div>
-        </div>
-        <div class="main-reviews__text">
-          <p>
-            Uso Gooms como estimulante del sueño me ayuda a no tener tantas intermitencias durante la noche y dormir
-            profundamente.
-          </p>
-        </div>
-      </div>
+        {% endcase %}
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -194,6 +154,33 @@
 {
   "name": "Reviews",
   "settings": [],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "name": "Reviews",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre",
+          "default": "Sebastian Canal"
+        },
+        {
+          "type": "text",
+          "id": "subname",
+          "label": "Cargo",
+          "default": "Nutricionista"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Gooms es excelente ya que disminuye el cansancio mental, físico y mejora el rendimiento de cada persona."
+        }
+      ]
+    }
+  ],
 
   "presets": [
     {

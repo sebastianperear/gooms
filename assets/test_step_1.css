@@ -87,4 +87,23 @@ a.question_button:hover{
   background-color: #EEE743;
 }
 
+@media (max-width: 767px) {
+  .column__step5 {
+    display: block !important;
+}
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 100%;
+    padding: 0.5em;
+  }
+
+  i.question_button-icon {
+    margin-top: 19%;
+}
+
+}
+
   
